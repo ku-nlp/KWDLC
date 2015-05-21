@@ -28,18 +28,18 @@ Annotations of this corpus are given in the following format.
 
 ```
 # S-ID:w201106-0000010001-1
-* 0 2D
-+ 0 3D
+* 2D
++ 3D
 太郎 たろう * 名詞 人名 * * 
 は は * 助詞 副助詞 * *
-* 1 2D
-+ 1 2D
+* 2D
++ 2D
 京都 きょうと * 名詞 地名 * *
-+ 2 3D <ne type="ORGANIZATION" target="京都大学"/>
++ 3D <ne type="ORGANIZATION" target="京都大学"/>
 大学 だいがく * 名詞 普通名詞 * *
 に に * 助詞 格助詞 * *
-* 2 -1D
-+ 3 -1D <rel type="ガ" target="太郎" sid="w201106-0000010001-1" tag="0"/><rel type="ニ" target="大学" sid="w201106-0000010001-1" tag="2"/>
+* -1D
++ -1D <rel type="ガ" target="太郎" sid="w201106-0000010001-1" tag="0"/><rel type="ニ" target="大学" sid="w201106-0000010001-1" tag="2"/>
 行った いった 行く 動詞 * 子音動詞カ行促音便形 基本形
 EOS
 ```
@@ -56,8 +56,7 @@ fine-grained POS, conjugate type, and conjugate form.
 The line starting with "*" represents "bunsetsu," which is a
 conventional unit for dependency in Japanese. "Bunsetsu" consists of
 one or more content words and zero or more function words. In this
-line, the first numeral means the ID of this bunsetsu, and the second
-numeral means the ID of its depending head. The subsequent alphabet
+line, the first numeral means the ID of its depending head. The subsequent alphabet
 denotes the type of dependency relation, i.e., "D" (normal
 dependency), "P" (coordination dependency), "I" (incomplete
 coordination dependency), and "A" (appositive dependency).
@@ -66,8 +65,7 @@ The line starting with "+" represents a basic phrase, which is a unit
 to which various relations are annotated. A basic phrase consists of
 one content word and zero or more function words. Therefore, it is
 equivalent to a bunsetsu or a part of a bunsetsu. In this line, the
-first numeral means the ID of this basic phrase, and the second
-numeral means the ID of its depending head. The subsequent alphabet is
+first numeral numeral means the ID of its depending head. The subsequent alphabet is
 defined in the same way as bunsetsu. The remaining part of this line
 includes the annotations of named entity and various relations.
 
