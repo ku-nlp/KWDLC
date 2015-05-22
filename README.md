@@ -39,7 +39,7 @@ Annotations of this corpus are given in the following format.
 大学 だいがく * 名詞 普通名詞 * *
 に に * 助詞 格助詞 * *
 * -1D
-+ -1D <rel type="ガ" target="太郎" sid="w201106-0000010001-1" tag="0"/><rel type="ニ" target="大学" sid="w201106-0000010001-1" tag="2"/>
++ -1D <rel type="ガ" target="太郎" sid="w201106-0000010001-1" id="0"/><rel type="ニ" target="大学" sid="w201106-0000010001-1" id="2"/>
 行った いった 行く 動詞 * 子音動詞カ行促音便形 基本形
 EOS
 ```
@@ -77,7 +77,7 @@ type for an OPTIONAL named entity, respectively. The details of these
 attributes are described in the IREX annotation guidelines.
 
 Annotations of various relations are given in <rel> tags. <rel> has
-the following four attributes: type, target, sid, and tag, which mean
+the following four attributes: type, target, sid, and id, which mean
 the name of a relation, the string of the counterpart, the sentence ID
 of the counterpart, and the basic phrase ID of the counterpart,
 respectively. If a basic phrase has multiple tags of the same type, a
