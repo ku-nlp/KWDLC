@@ -1,6 +1,6 @@
 # S-ID:w201106-0000284904-1 JUMAN:6.1-20101208 KNP:3.1-20110315 DATE:2011/07/26 SCORE:-57.72863 MOD:2013/06/29
 * 6D
-+ 6D <rel type="=≒" target="一人称"/><rel type="=≒" mode="AND" target="読者"/><rel type="=≒" mode="AND" target="不特定:人"/>
++ 6D <rel type="=≒" target="著者"/><rel type="=≒" mode="AND" target="読者"/><rel type="=≒" mode="AND" target="不特定:人"/>
 私 わたし 私 名詞 6 普通名詞 1 * 0 * 0 "代表表記:私/わたし 漢字読み:訓 カテゴリ:人"
 たち たち たち 接尾辞 14 名詞性名詞接尾辞 2 * 0 * 0 "代表表記:達/たち"
 は は は 助詞 9 副助詞 2 * 0 * 0 *

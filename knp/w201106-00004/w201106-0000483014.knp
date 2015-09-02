@@ -75,7 +75,7 @@ EOS
 グラフ ぐらふ グラフ 名詞 6 普通名詞 1 * 0 * 0 "代表表記:グラフ/ぐらふ カテゴリ:抽象物"
 に に に 助詞 9 格助詞 1 * 0 * 0 NIL
 * -1D
-+ -1D <rel type="ガ" target="一人称"/><rel type="ニ" target="グラフ" sid="w201106-0000483014-2-01" id="13"/><rel type="ヲ" target="都市" sid="w201106-0000483014-2-01" id="5"/><rel type="ヲ" mode="AND" target="数" sid="w201106-0000483014-2-01" id="9"/><rel type="ヲ" mode="AND" target="数" sid="w201106-0000483014-2-01" id="12"/><rel type="デ" target="ここ" sid="w201106-0000483014-2-01" id="0"/>
++ -1D <rel type="ガ" target="著者"/><rel type="ニ" target="グラフ" sid="w201106-0000483014-2-01" id="13"/><rel type="ヲ" target="都市" sid="w201106-0000483014-2-01" id="5"/><rel type="ヲ" mode="AND" target="数" sid="w201106-0000483014-2-01" id="9"/><rel type="ヲ" mode="AND" target="数" sid="w201106-0000483014-2-01" id="12"/><rel type="デ" target="ここ" sid="w201106-0000483014-2-01" id="0"/>
 した した する 動詞 2 * 0 サ変動詞 16 タ形 10 "代表表記:する/する 付属動詞候補（基本） 自他動詞:自:成る/なる"
 。 。 。 特殊 1 句点 1 * 0 * 0 NIL
 EOS
