@@ -1,4 +1,4 @@
-# S-ID:w201106-0000432529-1 JUMAN:6.1-20101208 KNP:3.1-20110315 DATE:2011/07/26 SCORE:-78.40815 MOD:2013/07/06
+# S-ID:w201106-0000432529-1 JUMAN:6.1-20101208 KNP:3.1-20110315 DATE:2011/07/26 SCORE:-78.40815 MOD:2015/09/23 MEMO:
 * 3D
 + 3D
 りんご りんご りんご 名詞 6 普通名詞 1 * 0 * 0
@@ -10,8 +10,8 @@
 * 3D
 + 3D
 良く よく 良く 副詞 8 * 0 * 0 * 0
-* 8D
-+ 9D <rel type="ヲ" target="りんご" sid="w201106-0000432529-1" id="0"/><rel type="デ" target="水" sid="w201106-0000432529-1" id="1"/><rel type="ガ" target="読者"/><rel type="ガ" mode="？" target="著者"/><rel type="ガ" mode="？" target="不特定:人"/>
+* 5D
++ 5D <rel type="ヲ" target="りんご" sid="w201106-0000432529-1" id="0"/><rel type="デ" target="水" sid="w201106-0000432529-1" id="1"/><rel type="ガ" target="読者"/><rel type="ガ" mode="？" target="著者"/><rel type="ガ" mode="？" target="不特定:人"/>
 洗って あらって 洗う 動詞 2 * 0 子音動詞ワ行 12 タ系連用テ形 14
 、 、 、 特殊 1 読点 2 * 0 * 0
 * 5D
