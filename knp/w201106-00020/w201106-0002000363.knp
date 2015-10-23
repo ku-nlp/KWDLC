@@ -1,0 +1,38 @@
+# S-ID:w201106-0002000363-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-1110.70394 MOD:2015/07/17 MEMO:
+* 1D
++ 1D <rel type="外の関係" target="姿勢" sid="w201106-0002000363-1" id="1"/><rel type="ヲ" target="食事" sid="w201106-0002000363-1" id="2"/><rel type="ガ" target="不特定:人"/><rel type="ガ" mode="？" target="読者"/>
+食べ たべ 食べる 動詞 2 * 0 母音動詞 1 基本連用形 8
+やすい やすい やすい 接尾辞 14 形容詞性述語接尾辞 5 イ形容詞アウオ段 18 基本形 2
+* 4D
++ 4D <rel type="トイウ" target="食べやすい" sid="w201106-0002000363-1" id="0"/>
+姿勢 しせい 姿勢 名詞 6 普通名詞 1 * 0 * 0
+で で で 助詞 9 格助詞 1 * 0 * 0
+、 、 、 特殊 1 読点 2 * 0 * 0
+* 4D
++ 4D <rel type="ガ" target="不特定:人"/><rel type="ガ" mode="？" target="読者"/>
+食事 しょくじ 食事 名詞 6 サ変名詞 2 * 0 * 0
+を を を 助詞 9 格助詞 1 * 0 * 0
+* 4D
++ 4D
+もっと もっと もっと 副詞 8 * 0 * 0 * 0
+* -1D
++ -1D <rel type="デ" target="姿勢" sid="w201106-0002000363-1" id="1"/><rel type="ヲ" target="食事" sid="w201106-0002000363-1" id="2"/><rel type="ガ" target="不特定:人"/><rel type="ガ" mode="？" target="読者"/>
+快適に かいてきに 快適だ 形容詞 3 * 0 ナ形容詞 21 ダ列基本連用形 7
+！ ！ ！ 特殊 1 記号 5 * 0 * 0
+EOS
+# S-ID:w201106-0002000363-2 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-6.69458 MOD:2015/07/17 MEMO:
+* -1D
++ -1D <rel type="ガ" target="著者"/><rel type="ヲ" target="不特定:状況1"/><rel type="ニ" target="不特定:人"/><rel type="ニ" mode="？" target="読者"/>
+オススメ おすすめ オススメ 名詞 6 サ変名詞 2 * 0 * 0
+し し する 動詞 2 * 0 サ変動詞 16 基本連用形 8
+ます ます ます 接尾辞 14 動詞性接尾辞 7 動詞性接尾辞ます型 31 基本形 2
+！ ！ ！ 特殊 1 記号 5 * 0 * 0
+EOS
+# S-ID:w201106-0002000363-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-1.35248 MOD:2015/10/13 MEMO:
+* -1D
++ 1D
+テーブル てーぶる テーブル 名詞 6 普通名詞 1 * 0 * 0
++ -1D <rel type="デ" target="テーブル" sid="w201106-0002000363-3" id="0"/><rel type="=" target="不特定:状況1"/><rel type="ガ" target="不特定:人"/><rel type="ガ" mode="？" target="読者"/>
+生活 せいかつ 生活 名詞 6 サ変名詞 2 * 0 * 0
+。 。 。 特殊 1 句点 1 * 0 * 0
+EOS
