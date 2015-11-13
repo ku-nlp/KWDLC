@@ -18,6 +18,7 @@ crowdsourcing.
 
 * knp/ : the corpus annotated with annotations of morphology, named entities, dependencies, predicate-argument structures, and coreferences
 * doc/ : annotation guidelines
+* test.file : The file list for evaluation of parsers
 
 Note that the encoding of the corpus data is UTF-8.
 
