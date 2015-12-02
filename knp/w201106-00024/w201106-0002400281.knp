@@ -1,4 +1,4 @@
-# S-ID:w201106-0002400281-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-56.77343 MOD:2015/09/07 MEMO:
+# S-ID:w201106-0002400281-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-56.77343 MOD:2015/11/27 MEMO:
 * 1P
 + 1D
 インナー いんなー インナー 名詞 6 普通名詞 1 * 0 * 0
@@ -7,7 +7,7 @@
 や や や 助詞 9 接続助詞 3 * 0 * 0
 * 2D
 + 3D
-          
+Ａ Ａ Ａ 特殊 1 記号 5 * 0 * 0
 + 4D <rel type="修飾" target="Ａ" sid="w201106-0002400281-1" id="2"/>
 ４ よん ４ 名詞 6 数詞 7 * 0 * 0
 + 5D <rel type="修飾" target="４" sid="w201106-0002400281-1" id="3"/>
