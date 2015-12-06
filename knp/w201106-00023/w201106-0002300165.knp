@@ -1,0 +1,60 @@
+# S-ID:w201106-0002300165-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-1.54202 MOD:2015/11/30 MEMO:
+* -1D
++ 2D <NE:OPTIONAL:アゲーノール><NE-OPTIONAL:PERSON,NONE:2>
+アゲーノール あげーのーる アゲーノール 名詞 6 人名 5 * 0 * 0
+− − − 特殊 1 記号 5 * 0 * 0
++ 2D <NE:LOCATION:フェニキア>
+フェニキア ふぇにきあ フェニキア 名詞 6 地名 4 * 0 * 0
++ -1D <rel type="ノ" target="フェニキア" sid="w201106-0002300165-1" id="1"/><rel type="=役" target="アゲーノール" sid="w201106-0002300165-1" id="0"/>
+王 おう 王 名詞 6 普通名詞 1 * 0 * 0
+。 。 。 特殊 1 句点 1 * 0 * 0
+EOS
+# S-ID:w201106-0002300165-2-01 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) 括弧削除 KNP:4.2-93fadae DATE:2015/07/04 SCORE:-11.67619 MOD:2015/11/30 MEMO:
+* 1D
++ 1D
+海神 かいじん 海神 名詞 6 普通名詞 1 * 0 * 0
+* 2P
++ 2P <rel type="修飾" target="海神" sid="w201106-0002300165-2-01" id="0"/><rel type="=構" target="海神" sid="w201106-0002300165-2-01" id="0"/><NE:OPTIONAL:ポセイドン><NE-OPTIONAL:PERSON,NONE:2>
+ポセイドン ぽせいどん ポセイドン 名詞 6 人名 5 * 0 * 0
+と と と 助詞 9 格助詞 1 * 0 * 0
+* 3D
++ 3D <NE:OPTIONAL:リビュエ><NE-OPTIONAL:PERSON,NONE:2>
+リビュエ りびゅえ リビュエ 名詞 6 人名 5 * 0 * 0 "品詞変更:リビュエ-リビュエ-リビュエ-15-2-0-0"
+の の の 助詞 9 接続助詞 3 * 0 * 0
+* 4D
++ 4D <rel type="ノ" target="ポセイドン" sid="w201106-0002300165-2-01" id="1"/><rel type="ノ" mode="AND" target="リビュエ" sid="w201106-0002300165-2-01" id="2"/><rel type="=構" target="王" sid="w201106-0002300165-1" id="2"/>
+子 こ 子 名詞 6 普通名詞 1 * 0 * 0
+と と と 助詞 9 格助詞 1 * 0 * 0
+* -1D
++ -1D <rel type="ニ" target="不特定:人"/><rel type="ガ" target="王" sid="w201106-0002300165-1" id="2"/><rel type="ト" target="子" sid="w201106-0002300165-2-01" id="3"/>
+さ さ する 動詞 2 * 0 サ変動詞 16 未然形 3
+れる れる れる 接尾辞 14 動詞性接尾辞 7 母音動詞 1 基本形 2
+。 。 。 特殊 1 句点 1 * 0 * 0
+EOS
+# S-ID:w201106-0002300165-2-02 括弧始:（ 括弧終:） 括弧位置:12 KNP:4.2-93fadae DATE:2015/07/04 SCORE:-0.83067 MOD:2015/11/30 MEMO:
+* -1D
++ -1D <rel type="=" target="リビュエ" sid="w201106-0002300165-2-01" id="2"/><NE:OPTIONAL:リビア><NE-OPTIONAL:PERSON,NONE:2>
+リビア りびあ リビア 名詞 6 人名 5 * 0 * 0
+EOS
+# S-ID:w201106-0002300165-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-1.67126 MOD:2015/11/30 MEMO:
+* 1P
++ 1P <NE:OPTIONAL:エウローペー><NE-OPTIONAL:PERSON,NONE:2>
+エウローペー えうろーぺー エウローペー 名詞 6 人名 5 * 0 * 0
+、 、 、 特殊 1 読点 2 * 0 * 0
+* 2P
++ 2P <NE:OPTIONAL:カドモス><NE-OPTIONAL:PERSON,NONE:2>
+カドモス かどもす」 カドモス 名詞 6 人名 5 * 0 * 0
+、 、 、 特殊 1 読点 2 * 0 * 0
+* 3P
++ 3P <NE:OPTIONAL:ポイニクス><NE-OPTIONAL:PERSON,NONE:2>
+ポイニクス ぽいにくす ポイニクス 名詞 6 人名 5 * 0 * 0
+、 、 、 特殊 1 読点 2 * 0 * 0
+* 4D
++ 4D <NE:OPTIONAL:キリクス><NE-OPTIONAL:PERSON,NONE:2>
+キリクス きりくす キリクス 名詞 6 人名 5 * 0 * 0
+の の の 助詞 9 接続助詞 3 * 0 * 0
+* -1D
++ -1D <rel type="ガ" target="王" sid="w201106-0002300165-1" id="2"/><rel type="ノ" target="エウローペー" sid="w201106-0002300165-3" id="0"/><rel type="ノ" mode="AND" target="カドモス" sid="w201106-0002300165-3" id="1"/><rel type="ノ" mode="AND" target="ポイニクス" sid="w201106-0002300165-3" id="2"/><rel type="ノ" mode="AND" target="キリクス" sid="w201106-0002300165-3" id="3"/><rel type="=構" target="王" sid="w201106-0002300165-1" id="2"/>
+父 ちち 父 名詞 6 普通名詞 1 * 0 * 0
+。 。 。 特殊 1 句点 1 * 0 * 0
+EOS
