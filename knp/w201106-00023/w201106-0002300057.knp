@@ -24,7 +24,7 @@
 ので ので のだ 助動詞 5 * 0 ナ形容詞 21 ダ列タ系連用テ形 12
 。 。 。 特殊 1 句点 1 * 0 * 0
 EOS
-# S-ID:w201106-0002300057-2 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-1070.42318 MOD:2015/11/12 MEMO:
+# S-ID:w201106-0002300057-2 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-1070.42318 MOD:2015/12/16 MEMO:
 * 3D
 + 3D
 今 いま 今 名詞 6 時相名詞 10 * 0 * 0
@@ -38,10 +38,10 @@ EOS
 を を を 助詞 9 格助詞 1 * 0 * 0
 * -1D
 + -1D <rel type="ヲ" target="空腹" sid="w201106-0002300057-2" id="2"/><rel type="時間" target="今" sid="w201106-0002300057-2" id="0"/><rel type="ガ" target="著者"/>
-耐え たえ 耐える 動詞 2 * 0 母音動詞 1 語幹 1 "品詞変更:耐え-たえ-耐える-2-0-1-8"
+耐え たえ 耐える 動詞 2 * 0 母音動詞 1 語幹 1
 。 。 。 特殊 1 句点 1 * 0 * 0
 EOS
-# S-ID:w201106-0002300057-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-22.45400 MOD:2015/11/12 MEMO:
+# S-ID:w201106-0002300057-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-22.45400 MOD:2015/12/23 MEMO:
 * 1D
 + 1D <rel type="ガ" target="著者"/><rel type="ヲ" target="空腹" sid="w201106-0002300057-2" id="2"/>
 我慢 がまん 我慢 名詞 6 サ変名詞 2 * 0 * 0

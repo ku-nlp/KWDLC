@@ -1,4 +1,4 @@
-# S-ID:w201106-0002300383-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-1.30174 MOD:2015/12/01 MEMO:
+# S-ID:w201106-0002300383-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-1.30174 MOD:2015/12/23 MEMO:
 * -1D
 + -1D <rel type="ガ" target="著者"/>
 おはよう おはよう おはよう 感動詞 12 * 0 * 0 * 0
@@ -24,7 +24,7 @@ EOS
 ね ね ね 助詞 9 終助詞 4 * 0 * 0
 。 。 。 特殊 1 句点 1 * 0 * 0
 EOS
-# S-ID:w201106-0002300383-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-88.00822 MOD:2015/12/01 MEMO:
+# S-ID:w201106-0002300383-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-88.00822 MOD:2015/12/23 MEMO:
 * 5D
 + 5D <NE:LOCATION:那覇>
 那覇 なは 那覇 名詞 6 地名 4 * 0 * 0
@@ -66,7 +66,7 @@ EOS
 こもった こもった こもる 動詞 2 * 0 子音動詞ラ行 10 タ形 10
 * 10D
 + 10D <rel type="トイウ" target="こもった" sid="w201106-0002300383-3" id="8"/>
-感じ かんじ 感じ 名詞 6 普通名詞 1 * 0 * 0 "品詞変更:感じ-かんじ-感じる-2-0-1-8"
+感じ かんじ 感じ 名詞 6 普通名詞 1 * 0 * 0 "品詞変更:感じ-かんじ-感じる-動詞-*-母音動詞-基本連用形"
 が が が 助詞 9 格助詞 1 * 0 * 0
 * -1D
 + -1D <rel type="ガ" target="感じ" sid="w201106-0002300383-3" id="9"/><rel type="ニ" target="著者"/><rel type="ガ２" target="東京" sid="w201106-0002300383-3" id="6"/>

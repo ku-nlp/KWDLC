@@ -1,4 +1,4 @@
-# S-ID:w201106-0002400291-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-33.52661 MOD:2015/09/07 MEMO:
+# S-ID:w201106-0002400291-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-33.52661 MOD:2015/12/16 MEMO:
 * 2D
 + 4D <rel type="ガ" target="不特定:物１"/>
 破れ やぶれ 破れる 動詞 2 * 0 母音動詞 1 基本連用形 8
@@ -8,7 +8,7 @@
 + 2D
 水 みず 水 名詞 6 普通名詞 1 * 0 * 0
 + 3D <rel type="ガ" target="不特定:人"/><rel type="ガ" mode="？" target="読者"/><rel type="デ" target="水" sid="w201106-0002400291-1" id="1"/><rel type="ヲ" target="不特定:物１"/>
-拭き ぶき 拭く 動詞 2 * 0 子音動詞カ行 2 基本連用形 8 "品詞変更:拭き-ふき-拭く-2-0-2-8"
+拭き ぶき 拭き 名詞 6 普通名詞 1 * 0 * 0 "品詞変更:拭き-ぶき-拭く-2-0-2-8"
 + 4D <rel type="ニヨッテ" target="拭き" sid="w201106-0002400291-1" id="2"/><rel type="ガ" target="不特定:人"/><rel type="ガ" mode="？" target="読者"/><rel type="ヲ" target="不特定:物１"/>
 メンテナンス めんてなんす メンテナンス 名詞 6 サ変名詞 2 * 0 * 0
 も も も 助詞 9 副助詞 2 * 0 * 0

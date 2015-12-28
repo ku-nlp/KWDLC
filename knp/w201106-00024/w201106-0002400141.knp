@@ -1,4 +1,4 @@
-# S-ID:w201106-0002400141-1 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-1038.54810 MOD:2015/09/02 MEMO:
+# S-ID:w201106-0002400141-1 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-1038.54810 MOD:2015/12/08 MEMO:
 * 1D
 + 1D <rel type="ガ" target="不特定:人"/><rel type="ニ" target="不特定:物１"/><rel type="外の関係" target="料金" sid="w201106-0002400141-1" id="1"/>
 宿泊 しゅくはく 宿泊 名詞 6 サ変名詞 2 * 0 * 0
@@ -25,7 +25,7 @@
 ピッタリ ぴったり ピッタリ 副詞 8 * 0 * 0 * 0
 ！ ！ ！ 特殊 1 記号 5 * 0 * 0
 EOS
-# S-ID:w201106-0002400141-2 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-37.17415 MOD:2015/09/02 MEMO:
+# S-ID:w201106-0002400141-2 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-37.17415 MOD:2015/12/21 MEMO:
 * 2D
 + 2D <rel type="ガ" target="不特定:人"/><rel type="ガ" mode="？" target="読者"/>
 お お お 接頭辞 13 名詞接頭辞 1 * 0 * 0
