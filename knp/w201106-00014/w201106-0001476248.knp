@@ -1,22 +1,21 @@
-# S-ID:w201106-0001476248-1 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/15 SCORE:-50.83589 MOD:2014/11/18 MEMO:
+# S-ID:w201106-0001476248-1 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/15 SCORE:-50.83589 MOD:2016/07/26 MEMO:
 * 1D
-+ 2D
++ 1D
 ９０ きゅうじゅう ９０ 名詞 6 数詞 7 * 0 * 0
 秒間 びょうかん 秒間 接尾辞 14 名詞性名詞助数辞 3 * 0 * 0
 で で で 助詞 9 格助詞 1 * 0 * 0
 * 2D
-+ 2D <rel type="ガ" target="著者"/><rel type="ガ" mode="？" target="読者"/><rel type="ガ" mode="？" target="不特定:人"/>
++ 3D <rel type="ガ" target="著者"/><rel type="ガ" mode="？" target="読者"/><rel type="ガ" mode="？" target="不特定:人"/><rel type="ヲ" target="数" sid="w201106-0001476248-1" id="3"/><rel type="デ" target="９０秒間" sid="w201106-0001476248-1" id="0"/>
 タイピング たいぴんぐ タイピング 名詞 6 サ変名詞 2 * 0 * 0
-+ 4D <rel type="ガ" target="タイピング" sid="w201106-0001476248-1" id="1"/><rel type="ガ２" target="読者"/><rel type="ガ２" mode="？" target="不特定:人"/><rel type="ガ２" mode="？" target="著者"/><rel type="デ" target="９０秒間" sid="w201106-0001476248-1" id="0"/><rel type="外の関係" target="数" sid="w201106-0001476248-1" id="4"/>
 できた できた できる 動詞 2 * 0 母音動詞 1 タ形 10
 * 3D
-+ 4D
++ 3D
 文字 もじ 文字 名詞 6 普通名詞 1 * 0 * 0
-+ 5D <rel type="ノ" target="文字" sid="w201106-0001476248-1" id="3"/>
++ 4D <rel type="ノ" target="文字" sid="w201106-0001476248-1" id="2"/>
 数 すう 数 接尾辞 14 名詞性名詞接尾辞 2 * 0 * 0
 を を を 助詞 9 格助詞 1 * 0 * 0
 * -1D
-+ -1D <rel type="ガ" target="不特定:物1"/><rel type="ヲ" target="数" sid="w201106-0001476248-1" id="4"/>
++ -1D <rel type="ガ" target="不特定:物1"/><rel type="ヲ" target="数" sid="w201106-0001476248-1" id="3"/>
 計測 けいそく 計測 名詞 6 サ変名詞 2 * 0 * 0
 し し する 動詞 2 * 0 サ変動詞 16 基本連用形 8
 ます ます ます 接尾辞 14 動詞性接尾辞 7 動詞性接尾辞ます型 31 基本形 2
@@ -24,7 +23,7 @@
 EOS
 # S-ID:w201106-0001476248-2 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/15 SCORE:-33.46132 MOD:2014/11/18 MEMO:
 * 3D
-+ 1D <rel type="=" target="タイピング" sid="w201106-0001476248-1" id="1"/><rel type="ガ" target="著者"/><rel type="ガ" mode="？" target="読者"/><rel type="ガ" mode="？" target="不特定:人"/><rel type="ヲ" target="文字" sid="w201106-0001476248-1" id="3"/>
++ 1D <rel type="=" target="タイピング" sid="w201106-0001476248-1" id="1"/><rel type="ガ" target="著者"/><rel type="ガ" mode="？" target="読者"/><rel type="ガ" mode="？" target="不特定:人"/><rel type="ヲ" target="文字" sid="w201106-0001476248-1" id="2"/>
 打ち うち 打ち 名詞 6 普通名詞 1 * 0 * 0 "品詞変更:打ち-うち-打つ-2-0-6-8"
 + 4D <rel type="ガ" target="著者"/><rel type="ガ" mode="？" target="読者"/><rel type="ガ" mode="？" target="不特定:人"/><rel type="ヲ" target="打ち" sid="w201106-0001476248-2" id="0"/>
 間違い まちがい 間違い 名詞 6 普通名詞 1 * 0 * 0 "品詞変更:間違い-まちがい-間違う-2-0-12-8"

@@ -34,7 +34,7 @@ EOS
 話す はなす 話す 動詞 2 * 0 子音動詞サ行 5 基本形 2
 。 。 。 特殊 1 句点 1 * 0 * 0
 EOS
-# S-ID:w201106-0002100190-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-174.16424 MOD:2015/10/25 MEMO:
+# S-ID:w201106-0002100190-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-174.16424 MOD:2016/07/27 MEMO:
 * 1D
 + 1D <NE:OPTIONAL:エグゾス><NE-OPTIONAL:ORGANIZATION,PERSON:0>
 エグゾス えぐぞす エグゾス 名詞 6 固有名詞 3 * 0 * 0 "品詞変更:エグゾス-エグゾス-エグゾス-15-2-0-0"
@@ -73,8 +73,7 @@ EOS
 に に に 助詞 9 格助詞 1 * 0 * 0
 * 10P
 + 11P <rel type="ヲ" target="ガソリン" sid="w201106-0002100190-3" id="5"/><rel type="ニ" target="車" sid="w201106-0002100190-3" id="8"/><rel type="ガ" target="不特定:人1"/>
-ばら ばら ばら 名詞 6 普通名詞 1 * 0 * 0
-撒き まき 撒く 動詞 2 * 0 子音動詞カ行 2 基本連用形 8
+ばら撒き ばらまき ばら撒く 動詞 2 * 0 子音動詞カ行 2 基本連用形 8
 、 、 、 特殊 1 読点 2 * 0 * 0
 * 10D
 + 11D <NE:OPTIONAL:バリバリアン><NE-OPTIONAL:PERSON,LOCATION:0>

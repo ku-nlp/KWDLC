@@ -1,32 +1,30 @@
-# S-ID:w201106-0002300091-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-40.48581 MOD:2015/12/16 MEMO:
-* 2D
-+ 2D <rel type="ノ" target="バッグ" sid="w201106-0002300091-1" id="7"/>
+# S-ID:w201106-0002300091-1 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-40.48581 MOD:2016/07/28 MEMO:
+* 1D
++ 1D <rel type="ノ" target="バッグ" sid="w201106-0002300091-1" id="6"/>
 側面 そくめん 側面 名詞 6 普通名詞 1 * 0 * 0
 から から から 助詞 9 格助詞 1 * 0 * 0
 * 2D
-+ 2D <rel type="ガ" target="不特定:人"/><rel type="ヲ" target="靴" sid="w201106-0002300091-1" id="3"/><rel type="カラ" target="側面" sid="w201106-0002300091-1" id="0"/>
++ 3D <rel type="ガ" target="不特定:人"/><rel type="ヲ" target="靴" sid="w201106-0002300091-1" id="2"/><rel type="カラ" target="側面" sid="w201106-0002300091-1" id="0"/><rel type="外の関係" target="入れ" sid="w201106-0002300091-1" id="3"/>
 出し入れ だしいれ 出し入れ 名詞 6 サ変名詞 2 * 0 * 0
-* 3D
-+ 4D <rel type="カラ" target="側面" sid="w201106-0002300091-1" id="0"/><rel type="ガ" target="出し入れ" sid="w201106-0002300091-1" id="1"/><rel type="ガ２" target="不特定:人"/><rel type="外の関係" target="入れ" sid="w201106-0002300091-1" id="4"/>
 できる できる できる 動詞 2 * 0 母音動詞 1 基本形 2
-* 4D
-+ 4D
+* 3D
++ 3D
 靴 くつ 靴 名詞 6 普通名詞 1 * 0 * 0
-+ 5D <rel type="ヲ" target="靴" sid="w201106-0002300091-1" id="3"/><rel type="ガ" target="不特定:人"/><rel type="外の関係" target="入れ" sid="w201106-0002300091-1" id="4"/>
++ 4D <rel type="ヲ" target="靴" sid="w201106-0002300091-1" id="2"/><rel type="ガ" target="不特定:人"/><rel type="外の関係" target="入れ" sid="w201106-0002300091-1" id="3"/>
 入れ いれ 入れ 名詞 6 普通名詞 1 * 0 * 0 "品詞変更:入れ-いれ-入れる-2-0-1-8"
-+ 7D <rel type="ガ" target="入れ" sid="w201106-0002300091-1" id="4"/><rel type="ニ" target="バッグ" sid="w201106-0002300091-1" id="7"/>
++ 6D <rel type="ガ" target="入れ" sid="w201106-0002300091-1" id="3"/><rel type="ニ" target="バッグ" sid="w201106-0002300091-1" id="6"/>
 付 つき 付 名詞 6 普通名詞 1 * 0 * 0
 の の の 助詞 9 接続助詞 3 * 0 * 0
 * -1D
-+ 7D <NE:OPTIONAL:ボストン><NE-OPTIONAL:NONE:0>
++ 6D <NE:OPTIONAL:ボストン><NE-OPTIONAL:NONE:0>
 ボストン ぼすとん ボストン 名詞 6 地名 4 * 0 * 0
-+ -1D <rel type="ガ" target="不特定:物1"/><rel type="=構" target="不特定:物1"/><rel type="修飾" target="付" sid="w201106-0002300091-1" id="5"/><rel type="修飾" mode="AND" target="ボストン" sid="w201106-0002300091-1" id="6"/>
++ -1D <rel type="ガ" target="不特定:物1"/><rel type="=構" target="不特定:物1"/><rel type="修飾" target="付" sid="w201106-0002300091-1" id="4"/><rel type="修飾" mode="AND" target="ボストン" sid="w201106-0002300091-1" id="5"/>
 バッグ ばっぐ バッグ 名詞 6 普通名詞 1 * 0 * 0
 。 。 。 特殊 1 句点 1 * 0 * 0
 EOS
 # S-ID:w201106-0002300091-2 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-83.65726 MOD:2015/11/12 MEMO:
 * 1D
-+ 3D <rel type="ガ" target="不特定:人"/><rel type="ヲ" target="靴" sid="w201106-0002300091-1" id="3"/><rel type="=" target="出し入れ" sid="w201106-0002300091-1" id="1"/><rel type="外の関係" target="タイプ" sid="w201106-0002300091-2" id="3"/>
++ 3D <rel type="ガ" target="不特定:人"/><rel type="ヲ" target="靴" sid="w201106-0002300091-1" id="2"/><rel type="=" target="出し入れ" sid="w201106-0002300091-1" id="1"/><rel type="外の関係" target="タイプ" sid="w201106-0002300091-2" id="3"/>
 出し入れ だしいれ 出し入れ 名詞 6 サ変名詞 2 * 0 * 0
 し し する 動詞 2 * 0 サ変動詞 16 基本連用形 8
 やすい やすい やすい 接尾辞 14 形容詞性述語接尾辞 5 イ形容詞アウオ段 18 基本形 2
@@ -46,7 +44,7 @@ EOS
 + 7P <rel type="ガ" target="仕様" sid="w201106-0002300091-2" id="4"/>
 充実 じゅうじつ 充実 名詞 6 サ変名詞 2 * 0 * 0
 * 5D
-+ 7D <rel type="=" target="靴" sid="w201106-0002300091-1" id="3"/>
++ 7D <rel type="=" target="靴" sid="w201106-0002300091-1" id="2"/>
 シューズ しゅーず シューズ 名詞 6 普通名詞 1 * 0 * 0
 が が が 助詞 9 格助詞 1 * 0 * 0
 * 6D
@@ -55,7 +53,7 @@ EOS
 * -1D
 + 10D <NE:OPTIONAL:ダレス><NE-OPTIONAL:PERSON:0>
 ダレス だれす ダレス 名詞 6 人名 5 * 0 * 0
-+ 10D <rel type="=" target="ボストン" sid="w201106-0002300091-1" id="6"/><NE:OPTIONAL:ボストン><NE-OPTIONAL:LOCATION:0>
++ 10D <rel type="=" target="ボストン" sid="w201106-0002300091-1" id="5"/><NE:OPTIONAL:ボストン><NE-OPTIONAL:LOCATION:0>
 ボストン ぼすとん ボストン 名詞 6 地名 4 * 0 * 0
 + -1D <rel type="ガ" target="不特定:物1"/><rel type="=構" target="不特定:物1"/><rel type="トイウ" target="入る" sid="w201106-0002300091-2" id="7"/><rel type="トイウ" mode="AND" target="充実" sid="w201106-0002300091-2" id="5"/><rel type="トイウ" mode="AND" target="タイプ" sid="w201106-0002300091-2" id="3"/>
 バッグ ばっぐ バッグ 名詞 6 普通名詞 1 * 0 * 0
