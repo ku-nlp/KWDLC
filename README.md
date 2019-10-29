@@ -82,10 +82,12 @@ The first line represents the ID of this sentence. In the subsequent
 lines, the lines starting with "*" denote "bunsetsu," the lines starting
 with "+" denote basic phrases, and the other lines denote morphemes.
 
-The line of morphemes is based on the output the morphological
-analyzer, JUMAN. This information includes surface string, reading,
-lemma, part of speech (POS), fine-grained POS, conjugate type, and
-conjugate form. "*" means that its field is not available.
+The line of morphemes is the same as the output of the morphological
+analyzers, JUMAN and Juman++. This information includes surface
+string, reading, lemma, part of speech (POS), fine-grained POS,
+conjugate type, and conjugate form. "*" means that its field is not
+available. Note that this format is slightly different from KWDLC 1.0,
+which adopted the same format as Kyoto University Text Corpus 4.0.
 
 The line starting with "*" represents "bunsetsu," which is a
 conventional unit for dependency in Japanese. "Bunsetsu" consists of
