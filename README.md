@@ -64,17 +64,17 @@ Annotations of this corpus are given in the following format.
 # S-ID:w201106-0000010001-1
 * 2D
 + 3D
-太郎 たろう * 名詞 人名 * * 
-は は * 助詞 副助詞 * *
+太郎 たろう 太郎 名詞 6 人名 5 * 0 * 0
+は は は 助詞 9 副助詞 2 * 0 * 0
 * 2D
 + 2D
-京都 きょうと * 名詞 地名 * *
+京都 きょうと 京都 名詞 6 地名 4 * 0 * 0
 + 3D <ne type="ORGANIZATION" target="京都大学"/>
-大学 だいがく * 名詞 普通名詞 * *
-に に * 助詞 格助詞 * *
+大学 だいがく 大学 名詞 6 普通名詞 1 * 0 * 0
+に に に 助詞 9 格助詞 1 * 0 * 0
 * -1D
 + -1D <rel type="ガ" target="太郎" sid="w201106-0000010001-1" id="0"/><rel type="ニ" target="大学" sid="w201106-0000010001-1" id="2"/>
-行った いった 行く 動詞 * 子音動詞カ行促音便形 基本形
+行った いった 行く 動詞 2 * 0 子音動詞カ行促音便形 3 タ形 10
 EOS
 ```
 
@@ -83,9 +83,9 @@ lines, the lines starting with "*" denote "bunsetsu," the lines starting
 with "+" denote basic phrases, and the other lines denote morphemes.
 
 The line of morphemes is based on the output the morphological
-analyzer, JUMAN.  This information includes surface string, reading,
-lemma ("*" if it does not conjugate), part of speech (POS),
-fine-grained POS, conjugate type, and conjugate form.
+analyzer, JUMAN. This information includes surface string, reading,
+lemma, part of speech (POS), fine-grained POS, conjugate type, and
+conjugate form. "*" means that its field is not available.
 
 The line starting with "*" represents "bunsetsu," which is a
 conventional unit for dependency in Japanese. "Bunsetsu" consists of
