@@ -151,6 +151,7 @@ guidelines (disc_guideline.pdf).
 ### References ###
 
 * Masatsugu Hangyo, Daisuke Kawahara and Sadao Kurohashi. Building a Diverse Document Leads Corpus Annotated with Semantic Relations, In Proceedings of the 26th Pacific Asia Conference on Language Information and Computing, pp.535-544, 2012. http://www.aclweb.org/anthology/Y/Y12/Y12-1058.pdf
+* 萩行正嗣, 河原大輔, 黒橋禎夫. 多様な文書の書き始めに対する意味関係タグ付きコーパスの構築とその分析, 自然言語処理, Vol.21, No.2, pp.213-248, 2014. https://doi.org/10.5715/jnlp.21.213
 * Daisuke Kawahara, Yuichiro Machida, Tomohide Shibata, Sadao Kurohashi, Hayato Kobayashi and Manabu Sassano. Rapid Development of a Corpus with Discourse Annotations using Two-stage Crowdsourcing, In Proceedings of the 25th International Conference on Computational Linguistics, pp.269-278, 2014. http://www.aclweb.org/anthology/C/C14/C14-1027.pdf
 
 
