@@ -69,7 +69,7 @@ Annotations of this corpus are given in the following format.
 * 2D
 + 2D
 京都 きょうと 京都 名詞 6 地名 4 * 0 * 0
-+ 3D <ne type="ORGANIZATION" target="京都大学"/>
++ 3D <NE:ORGANIZATION:京都大学>
 大学 だいがく 大学 名詞 6 普通名詞 1 * 0 * 0
 に に に 助詞 9 格助詞 1 * 0 * 0
 * -1D
