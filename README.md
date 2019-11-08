@@ -105,14 +105,14 @@ first numeral numeral means the ID of its depending head. The subsequent alphabe
 defined in the same way as bunsetsu. The remaining part of this line
 includes the annotations of named entity and various relations.
 
-Annotations of named entity are given in <ne> tags. <ne> has the
+Annotations of named entity are given in `<NE>` tags. `<NE>` has the
 following four attributes: type, target, possibility, and
 optional_type, which mean the class of a named entity, the string of
 a named entity, possible classes for an OPTIONAL named entity, and a
 type for an OPTIONAL named entity, respectively. The details of these
 attributes are described in the IREX annotation guidelines.
 
-Annotations of various relations are given in <rel> tags. <rel> has
+Annotations of various relations are given in `<rel>` tags. `<rel>` has
 the following four attributes: type, target, sid, and id, which mean
 the name of a relation, the string of the counterpart, the sentence ID
 of the counterpart, and the basic phrase ID of the counterpart,
