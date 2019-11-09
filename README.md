@@ -101,7 +101,7 @@ The line starting with "+" represents a basic phrase, which is a unit
 to which various relations are annotated. A basic phrase consists of
 one content word and zero or more function words. Therefore, it is
 equivalent to a bunsetsu or a part of a bunsetsu. In this line, the
-first numeral numeral means the ID of its depending head. The subsequent alphabet is
+first numeral means the ID of its depending head. The subsequent alphabet is
 defined in the same way as bunsetsu. The remaining part of this line
 includes the annotations of named entity and various relations.
 
