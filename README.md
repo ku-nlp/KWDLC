@@ -47,7 +47,7 @@ the IREX web site (http://nlp.cs.nyu.edu/irex/).
 
 ### Distributed files ###
 
-* knp/ : the corpus annotated with annotations of morphology, named entities, dependencies, predicate-argument structures, and coreferences
+* knp/ : the corpus annotated with morphology, named entities, dependencies, predicate-argument structures, and coreferences
 * disc/ : the corpus annotated with discourse relations
 * org/ : the raw corpus
 * doc/ : annotation guidelines
