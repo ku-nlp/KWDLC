@@ -1,4 +1,4 @@
-# S-ID:w201106-0001130702-1 JUMAN:8.0-20131111 KNP:4.0-20140226 DATE:2014/02/27 SCORE:-63.03660 MOD:2014/06/25 MEMO:
+# S-ID:w201106-0001130702-1 JUMAN:8.0-20131111 KNP:4.0-20140226 DATE:2014/02/27 SCORE:-63.03660 MOD:2020/01/12 MEMO:
 * 1D
 + 1D <rel type="ノ" target="読者"/><rel type="ノ" mode="？" target="不特定:人"/>
 少人数 しょうにんずう 少人数 名詞 6 普通名詞 1 * 0 * 0
@@ -7,7 +7,7 @@
 で で で 助詞 9 格助詞 1 * 0 * 0
 の の の 助詞 9 接続助詞 3 * 0 * 0
 * 2D
-+ 3D <rel type="デ" target="限定"/><rel type="デ" mode="？" target="なし"/><rel type="ヲ" target="不特定:物1"/><rel type="ガ" target="不特定:人"/><rel type="ガ" mode="AND" target="著者"/><rel type="ガ" mode="？" target="読者"/>
++ 3D <rel type="ヲ" target="不特定:物1"/><rel type="ガ" target="不特定:人"/><rel type="ガ" mode="AND" target="著者"/><rel type="ガ" mode="？" target="読者"/><rel type="デ" target="限定" sid="w201106-0001130702-1" id="1"/><rel type="デ" mode="？" target="なし"/>
 予約 よやく 予約 名詞 6 サ変名詞 2 * 0 * 0
 と と と 助詞 9 格助詞 1 * 0 * 0
 * -1D

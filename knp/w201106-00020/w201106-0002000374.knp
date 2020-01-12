@@ -31,7 +31,7 @@ EOS
 有 あり 有 名詞 6 普通名詞 1 * 0 * 0
 ！ ！ ！ 特殊 1 記号 5 * 0 * 0
 EOS
-# S-ID:w201106-0002000374-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-128.89598 MOD:2015/10/13 MEMO:
+# S-ID:w201106-0002000374-3 (Revision.8ce44af on 2014-08-14) JUMAN:8.0 (Revision.06f73dd on 2015-01-07) KNP:4.2-93fadae DATE:2015/07/04 SCORE:-128.89598 MOD:2020/01/12 MEMO:
 * 8D
 + 10D <rel type="=" target="著者"/>
 弊社 へいしゃ 弊社 名詞 6 普通名詞 1 * 0 * 0
@@ -56,16 +56,16 @@ EOS
 + 6D <rel type="デ" target="通信" sid="w201106-0002000374-3" id="4"/><rel type="ガ" target="不特定:人"/><rel type="ヲ" target="不特定:物"/>
 販売 はんばい 販売 名詞 6 サ変名詞 2 * 0 * 0
 の の の 助詞 9 接続助詞 3 * 0 * 0
-* 6D
-+ 7D <rel type="ガ" target="センター" sid="w201106-0002000374-3" id="10"/><rel type="カラ" target="不特定:人"/><rel type="デ" target="販売" sid="w201106-0002000374-3" id="5"/>
+* 7D
++ 8D <rel type="ガ" target="センター" sid="w201106-0002000374-3" id="10"/><rel type="カラ" target="不特定:人"/><rel type="デ" target="販売" sid="w201106-0002000374-3" id="5"/>
 受注 じゅちゅう 受注 名詞 6 サ変名詞 2 * 0 * 0
 を を を 助詞 9 格助詞 1 * 0 * 0
 * 7D
-+ 8D <rel type="ヲ" target="受注" sid="w201106-0002000374-3" id="6"/>
++ 8D
 メイン めいん メイン 名詞 6 普通名詞 1 * 0 * 0
 に に に 助詞 9 格助詞 1 * 0 * 0
 * 8D
-+ 10D <rel type="ガ" target="センター" sid="w201106-0002000374-3" id="10"/><rel type="ニ" target="メイン" sid="w201106-0002000374-3" id="7"/>
++ 10D <rel type="ガ" target="センター" sid="w201106-0002000374-3" id="10"/><rel type="ヲ" target="受注" sid="w201106-0002000374-3" id="6"/>
 行う おこなう 行う 動詞 2 * 0 子音動詞ワ行 12 基本形 2
 * -1D
 + 10D

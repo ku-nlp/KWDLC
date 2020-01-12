@@ -35,7 +35,7 @@ EOS
 ん ん ぬ 助動詞 5 * 0 助動詞ぬ型 27 音便基本形 12
 。 。 。 特殊 1 句点 1 * 0 * 0
 EOS
-# S-ID:w201106-0001476527-3 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/15 SCORE:-40.92678 MOD:2014/11/18 MEMO:
+# S-ID:w201106-0001476527-3 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/15 SCORE:-40.92678 MOD:2020/01/12 MEMO:
 * 1D
 + 1D <rel type="外の関係" target="ため" sid="w201106-0001476527-3" id="1"/><rel type="ガ" target="読者"/><rel type="ニ" target="読者"/><rel type="ニ" mode="？" target="不特定:人"/>
 勝つ かつ 勝つ 動詞 2 * 0 子音動詞タ行 6 基本形 2
@@ -44,7 +44,7 @@ EOS
 ため ため ため 名詞 6 副詞的名詞 9 * 0 * 0
 の の の 助詞 9 接続助詞 3 * 0 * 0
 * 3D
-+ 3D <rel type="修飾" target="ため" sid="w201106-0001476527-3" id="1"/><rel type="=≒" target="転職" sid="w201106-0001476527-3" id="2"/><rel type="ガ" target="読者"/><rel type="ニ" target="不特定:人1"/><rel type="カラ" target="不特定:人2"/>
++ 3D <rel type="修飾" target="ため" sid="w201106-0001476527-3" id="1"/><rel type="ガ" target="読者"/><rel type="ニ" target="不特定:人1"/><rel type="カラ" target="不特定:人2"/><rel type="=≒" target="転職" sid="w201106-0001476527-2" id="1"/>
 転職 てんしょく 転職 名詞 6 サ変名詞 2 * 0 * 0
 を を を 助詞 9 格助詞 1 * 0 * 0
 * -1D

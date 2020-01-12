@@ -1,10 +1,10 @@
-# S-ID:w201106-0001138969-1 JUMAN:8.0-20131111 KNP:4.0-20140226 DATE:2014/02/27 SCORE:-64.05332 MOD:2014/09/19 MEMO:
+# S-ID:w201106-0001138969-1 JUMAN:8.0-20131111 KNP:4.0-20140226 DATE:2014/02/27 SCORE:-64.05332 MOD:2020/01/12 MEMO:
 * 1D
 + 1D
 ここ ここ ここ 指示詞 7 名詞形態指示詞 1 * 0 * 0
 に に に 助詞 9 格助詞 1 * 0 * 0
 * 3D
-+ 4D <rel type="ニ" target="ここ" sid="w201106-0001138969-1" id="0"/><rel type="ガ" target="著者"/><rel type="ヲ" target="ご案内" sid="w201106-0001138969-1" id="4"/><rel type="ヲ" mode="AND" target="リリース" sid="w201106-0001138969-1" id="3"/>
++ 4D <rel type="ニ" target="ここ" sid="w201106-0001138969-1" id="0"/><rel type="ガ" target="著者"/><rel type="ヲ" target="案内" sid="w201106-0001138969-1" id="4"/><rel type="ヲ" mode="AND" target="リリース" sid="w201106-0001138969-1" id="3"/>
 掲載 けいさい 掲載 名詞 6 サ変名詞 2 * 0 * 0
 して して する 動詞 2 * 0 サ変動詞 16 タ系連用テ形 14
 おり おり おる 接尾辞 14 動詞性接尾辞 7 子音動詞ラ行 10 基本連用形 8
@@ -22,7 +22,7 @@
 は は は 助詞 9 副助詞 2 * 0 * 0
 、 、 、 特殊 1 読点 2 * 0 * 0
 * 5D
-+ 6D <rel type="ガ" target="著者"/><rel type="ガ" mode="？" target="不特定:人"/><rel type="ヲ" target="リリース" sid="w201106-0001138969-1" id="3"/><rel type="ヲ" mode="AND" target="ご案内" sid="w201106-0001138969-1" id="4"/><rel type="ニ" target="不特定:人"/><rel type="時間" target="日" sid="w201106-0001138969-1" id="6"/>
++ 6D <rel type="ガ" target="著者"/><rel type="ガ" mode="？" target="不特定:人"/><rel type="ニ" target="不特定:人"/><rel type="時間" target="日" sid="w201106-0001138969-1" id="6"/><rel type="ヲ" target="リリース" sid="w201106-0001138969-1" id="3"/><rel type="ヲ" mode="AND" target="案内" sid="w201106-0001138969-1" id="4"/>
 発表 はっぴょう 発表 名詞 6 サ変名詞 2 * 0 * 0
 + 7D
 日 び 日 名詞 6 時相名詞 10 * 0 * 0
@@ -32,7 +32,7 @@
 現在 げんざい 現在 名詞 6 時相名詞 10 * 0 * 0
 の の の 助詞 9 接続助詞 3 * 0 * 0
 * -1D
-+ -1D <rel type="ガ" target="案内"/><rel type="ガ" mode="AND" target="リリース" sid="w201106-0001138969-1" id="3"/><rel type="時間" target="現在" sid="w201106-0001138969-1" id="8"/><rel type="=構≒" target="リリース" sid="w201106-0001138969-1" id="3"/><rel type="=構≒" mode="AND" target="ご案内" sid="w201106-0001138969-1" id="4"/>
++ -1D <rel type="時間" target="現在" sid="w201106-0001138969-1" id="8"/><rel type="ガ" target="リリース" sid="w201106-0001138969-1" id="3"/><rel type="ガ" mode="AND" target="案内" sid="w201106-0001138969-1" id="4"/><rel type="=構≒" target="リリース" sid="w201106-0001138969-1" id="3"/><rel type="=構≒" mode="AND" target="案内" sid="w201106-0001138969-1" id="4"/>
 情報 じょうほう 情報 名詞 6 普通名詞 1 * 0 * 0
 です です だ 判定詞 4 * 0 判定詞 25 デス列基本形 27
 。 。 。 特殊 1 句点 1 * 0 * 0
