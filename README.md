@@ -51,7 +51,7 @@ the IREX web site (http://nlp.cs.nyu.edu/irex/).
 * disc/ : the corpus annotated with discourse relations
 * org/ : the raw corpus
 * doc/ : annotation guidelines
-* {train,test}.files : the file lists for evaluation
+* id/ : document id files providing train/test split
 
 Note that the encoding of the corpus data is UTF-8.
 
