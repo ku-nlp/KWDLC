@@ -8,7 +8,7 @@
 場 じょう 場 名詞 6 普通名詞 1 * 0 * 0
 の の の 助詞 9 接続助詞 3 * 0 * 0
 * 6D
-+ 4D <rel type="ガ" target="著者"/><rel type="ヲ" target="場" sid="w201106-0001009310-1" id="2"/><rel type="ガ" mode="？" target="不特定:人1 "/>
++ 4D <rel type="ガ" target="著者"/><rel type="ヲ" target="場" sid="w201106-0001009310-1" id="2"/><rel type="ガ" mode="？" target="不特定:人1"/>
 改修 かいしゅう 改修 名詞 6 サ変名詞 2 * 0 * 0
 + 9D <rel type="ガ" target="著者"/><rel type="ヲ" target="場" sid="w201106-0001009310-1" id="2"/><rel type="ガ" mode="？" target="不特定:人1"/><rel type="修飾" target="改修" sid="w201106-0001009310-1" id="3"/>
 工事 こうじ 工事 名詞 6 サ変名詞 2 * 0 * 0
