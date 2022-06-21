@@ -308,11 +308,14 @@ def read_disc_ann_file(filepath):
 
 if __name__ == "__main__":
     parser = ArgumentParser()
-    parser.add_argument("-g", "--gold_knp", default=False, action='store_true')
+    parser.add_argument("-g", "--gold_knp", default=False, action='store_true',
+                        help='use the corpus annotated with morphology, named entities, dependencies, predicate-argument structures, and coreferences')
     parser.add_argument("--remove_duplicate_from_expert",
-                        default=False, action='store_true')
+                        default=False, action='store_true',
+                        help='Remove duplicate documents from annotation file annotated by experts.')
     parser.add_argument("--remove_duplicate_from_crowd",
-                        default=False, action='store_true')
+                        default=False, action='store_true',
+                        help='Remove duplicate documents from annotation file annotated by crowd workers.')
     args = parser.parse_args()
 
     # Read Disc_annotation files
