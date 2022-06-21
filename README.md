@@ -132,8 +132,8 @@ In this corpus, a clause pair is given a discourse type and its probability as f
 2 経営者として何事も全てビジネスチャンスに変えるマインドが大切だと感じた。
 3 生きていく上で追い風もあれば、
 4 逆風もある。
-1-2 関係なしまたは弱い関係:0.999915 対比:3.6e-05 根拠:1.5e-05 原因・理由:8e-06 目的:7e-06
-3-4 対比:0.999986 その他根拠:3e-06
+1-2 談話関係なし:5  原因・理由:4  条件:1
+3-4 原因・理由:3  談話関係なし:2  逆接:2  対比:2  目的:1
 
 ```
 
@@ -155,6 +155,7 @@ guidelines (disc_guideline.pdf).
 * Masatsugu Hangyo, Daisuke Kawahara and Sadao Kurohashi. Building a Diverse Document Leads Corpus Annotated with Semantic Relations, In Proceedings of the 26th Pacific Asia Conference on Language Information and Computing, pp.535-544, 2012. http://www.aclweb.org/anthology/Y/Y12/Y12-1058.pdf
 * 萩行正嗣, 河原大輔, 黒橋禎夫. 多様な文書の書き始めに対する意味関係タグ付きコーパスの構築とその分析, 自然言語処理, Vol.21, No.2, pp.213-248, 2014. https://doi.org/10.5715/jnlp.21.213
 * Daisuke Kawahara, Yuichiro Machida, Tomohide Shibata, Sadao Kurohashi, Hayato Kobayashi and Manabu Sassano. Rapid Development of a Corpus with Discourse Annotations using Two-stage Crowdsourcing, In Proceedings of the 25th International Conference on Computational Linguistics, pp.269-278, 2014. http://www.aclweb.org/anthology/C/C14/C14-1027.pdf
+* 岸本裕大, 村脇有吾, 河原大輔, 黒橋禎夫. 日本語談話関係解析：タスク設計・談話標識の自動認識・ コーパスアノテーション, 自然言語処理, Vol.27, No.4, pp.889-931, 2020. https://doi.org/10.5715/jnlp.27.889
 
 
 ### Acknowledgment ###
