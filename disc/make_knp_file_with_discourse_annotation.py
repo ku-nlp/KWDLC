@@ -100,7 +100,7 @@ def add_discourse_info_to_gold_knp(ann_data):
                         data = ""
             # Add discourse tags
             if len(clause_tids) != len(doc["clause"]):
-                print(f'ERROR: Differ clause split: {doc["A-ID"]}',
+                print(f'Warning: Differ clause split: {doc["A-ID"]}',
                       file=sys.stderr)
                 # print(clause_tids, doc["clause"]), file=sys.stderr)
                 continue
@@ -198,7 +198,7 @@ def make_knp_from_textfile(disc_ann):
         # Add discourse tags
         clause_id = 1
         if len(knp_results) != 3:
-            print(f'ERROR: Failed to restore text: {doc["A-ID"]}',
+            print(f'Warning: Failed to restore text: {doc["A-ID"]}',
                   file=sys.stderr)
             # print(doc["A-ID"])
             # for i in range(0, len(knp_results)):
