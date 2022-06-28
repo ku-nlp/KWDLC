@@ -15,7 +15,7 @@ anaphora, coreferences, and discourse. All the annotations except
 discourse annotations were given by manually modifying automatic
 analyses of the morphological analyzer JUMAN and the dependency, case
 structure and anaphora analyzer KNP. The discourse annotations were
-given using crowdsourcing.
+given by two types of annotators; experts and crowd workers.
 
 
 ### Notes ###
@@ -124,7 +124,7 @@ guidelines (rel_guideline.pdf).
 
 ### Format of the corpus annotated with discourse relations ###
 
-In this corpus, a clause pair is given a discourse type and its probability as follows.
+In this corpus, a clause pair is given a discourse type and its votes as follows.
 
 ```
 # A-ID:w201106-0001998536
@@ -139,15 +139,14 @@ In this corpus, a clause pair is given a discourse type and its probability as f
 
 The first line represents the ID of this document, the subsequent
 block denotes clause IDs and clauses, and the last block denotes
-discourse relations for clause pairs and their probabilities. These
-discourse relations and probabilities are the results of the second
+discourse relations for clause pairs and their voting results. These
+discourse relations and voting results are the results of the second
 stage of crowdsourcing. Each line is the list of a discourse relation
-and its probability in order of probability. For the discourse
-relation with the highest probability, the discourse direction is
-annotated; if it is reverse order, "(逆方向)" is added to the
-discourse relation. The details of these probabilities and discourse
-relations are described in [Kawahara et al., 2014] and the annotation
-guidelines (disc_guideline.pdf).
+and its votes in order of votes. For the discourse relation annotated
+by experts, the discourse direction is annotated; if it is reverse order,
+"(逆方向)" is added to the discourse relation. The details of annotation
+methods and discourse relations are described in [Kawahara et al., 2014]
+and the annotation guidelines (disc_guideline.pdf).
 
 
 ### References ###

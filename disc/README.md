@@ -3,19 +3,27 @@
 * `disc_crowdsourcing.txt` annotation file annotated by crowd workers.
 * `disc_expert.txt` annotation file annotated by experts.
 * `make_knp_file_with_discourse_annotation.py` python script to convert annotation files to KNP-format files.
+* `requirements.txt` 
 
-### Note ###
+### Requirement ###
 
-If you want to use same format as "the corpus annotated with morphology, named entities, dependencies, predicate-argument structures, and coreferences", please run the following command. 
+```
+$ pip install -r requirements.txt 
+```
+
+### How to make KNP-format files ### 
+
+Run the following command.
 
 ```
 $ python make_knp_file_with_discourse_annotation.py
 ```
 
-That command outputs two files.
+That command outputs three files.
 
 * `disc_crowdsourcing.knp` annotation file annotated by crowd workers.
 * `disc_expert.knp` annotation file annotated by experts.
+* `disc.log` warning log file.
 
 #### Options ####
 
