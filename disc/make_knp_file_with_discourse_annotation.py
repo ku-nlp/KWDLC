@@ -1,16 +1,23 @@
 import os
-import sys
 import re
 from pyknp import KNP
 from collections import defaultdict
 from argparse import ArgumentParser
 
+from progressbar import progressbar
+
+from logging import getLogger, FileHandler, Formatter
+logger = getLogger(__name__)
+handler = FileHandler("disc.log")
+handler.setFormatter(Formatter("%(asctime)s  %(message)s"))
+logger.addHandler(handler)
+
 knp = KNP()
 
 EXPERT_ANN_FILE = "./disc_expert.txt"
 CROWD_ANN_FILE = "./disc_crowdsourcing.txt"
-EXPERT_KNP = "./disc_expert.knp2"
-CROWD_KNP = "./disc_crowdsourcing.knp2"
+EXPERT_KNP = "./disc_expert.knp"
+CROWD_KNP = "./disc_crowdsourcing.knp"
 
 GOLD_KNP_DIR = "../knp"
 GOLD_ORG_DIR = "../org"
@@ -45,12 +52,12 @@ def organize_knp_features(knp_result):
 
 def add_discourse_info_to_gold_knp(ann_data):
     output_text = ""
-    for doc in ann_data:
+    for doc in progressbar(ann_data):
         # Search KNP file
         knp_path = \
             os.path.join(GOLD_KNP_DIR, doc["A-ID"][:13], f'{doc["A-ID"]}.knp')
         if not os.path.exists(knp_path):
-            print(f'KNP FILE IS NOT EXIST: {knp_path}', file=sys.stderr)
+            logger.warning(f'KNP FILE IS NOT EXIST: {knp_path}')
         else:
             knp_results = []
             clause_tids = []
@@ -100,19 +107,15 @@ def add_discourse_info_to_gold_knp(ann_data):
                         data = ""
             # Add discourse tags
             if len(clause_tids) != len(doc["clause"]):
-                print(f'Warning: Differ clause split: {doc["A-ID"]}',
-                      file=sys.stderr)
-                # print(clause_tids, doc["clause"]), file=sys.stderr)
+                logger.warning(f'Warning: Differ clause split: {doc["A-ID"]}')
+                # logger.warning(clause_tids, doc["clause"])
                 continue
             clause_id = 1
             if len(knp_results) != 3:
-                print(doc["A-ID"])
-                for i in range(0, len(knp_results)):
-                    result = knp_results[i]
-                    print("".join(
-                        [mrph.midasi for mrph in result.mrph_list()]
-                    ))
-                sys.exit(1)
+                logger.warning(
+                    f'Warning: Differ sentence split: {doc["A-ID"]}'
+                )
+                continue
             for sent_id in range(0, 3):
                 result = knp_results[sent_id]
                 for i, tag in enumerate(result.tag_list()):
@@ -146,7 +149,7 @@ def parse_knp(sent, sid):
 
 def make_knp_from_textfile(disc_ann):
     output_text = ""
-    for doc in disc_ann:
+    for doc in progressbar(disc_ann):
         knp_results = []
         clause_tids = []
         sid = 1
@@ -198,20 +201,16 @@ def make_knp_from_textfile(disc_ann):
         # Add discourse tags
         clause_id = 1
         if len(knp_results) != 3:
-            print(f'Warning: Failed to restore text: {doc["A-ID"]}',
-                  file=sys.stderr)
-            # print(doc["A-ID"])
-            # for i in range(0, len(knp_results)):
-            #     result = knp_results[i]
-            #     print("".join([mrph.midasi for mrph in result.mrph_list()]))
+            logger.warning(f'Warning: Failed to restore text: {doc["A-ID"]}')
             continue
         for sent_id in range(0, 3):
             try:
                 result = knp_results[sent_id]
-            except:
-                print(doc["A-ID"])
-                print(knp_results)
-                sys.exit(1)
+            except ValueError:
+                logger.warning(
+                    f'Warning: Failed to restore text: {doc["A-ID"]}'
+                )
+                break
             for i, tag in enumerate(result.tag_list()):
                 if '<節-区切>' in tag.fstring:
                     dc_label = ''
@@ -241,9 +240,8 @@ def remove_duplicate_data(expert_ann, crowd_ann,
         aids = [doc["A-ID"] for doc in crowd_ann]
         for doc in expert_ann:
             if doc["A-ID"] in aids:
-                print(
+                logger.warning(
                     f'Remove duplicate text from expert corpus: {doc["A-ID"]}',
-                    file=sys.stderr
                 )
             else:
                 new_expert.append(doc)
@@ -252,9 +250,8 @@ def remove_duplicate_data(expert_ann, crowd_ann,
         aids = [doc["A-ID"] for doc in expert_ann]
         for doc in crowd_ann:
             if doc["A-ID"] in aids:
-                print(
+                logger.warning(
                     f'Remove duplicate text from crowd corpus: {doc["A-ID"]}',
-                    file=sys.stderr
                 )
             else:
                 new_crowd.append(doc)
