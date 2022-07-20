@@ -1,0 +1,4 @@
+progressbar2==4.0.0
+pyknp==0.6.1
+python-utils==3.3.3
+six==1.16.0
