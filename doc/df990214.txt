@@ -1,0 +1,1157 @@
+
+                  固有表現抽出課題 (version 990214)
+                  ---------------------------------
+
+                                                    1999年2月14日
+
+
+１．イントロダクション
+
+固有表現の抽出では以下の8種類の固有表現の抽出を行なう。
+
+                            開始位置タグ     終了位置タグ
+   * 固有名詞的表現
+       * 組織名、政府組織名 <ORGANIZATION>   </ORGANIZATION>
+       * 人名               <PERSON>         </PERSON>
+       * 地名               <LOCATION>       </LOCATION>
+       * 固有物名           <ARTIFACT>       </ARTIFACT>
+   * 時間表現
+       * 日付表現           <DATE>           </DATE>
+       * 時間表現           <TIME>           </TIME>
+   * 数値表現
+       * 金額表現           <MONEY>          </MONEY>
+       * 割合表現           <PERCENT>        </PERCENT>
+
+それぞれの固有表現文字列の開始、終了位置に、システムは重複や入れ子のない唯一の
+タグのペアをふる。もし、表現が重なっている場合は、原則的に長い単位の表現を抽出
+する。(例：日本銀行では日本を地名として抽出するのではなく、日本銀行全体を組織名
+として抽出する。)タグの種類は上記の分類に示された通りである。
+
+
+１．１　オプショナル
+
+タグ付けが判定者にも困難な場合には、<OPTIONAL>,</OPTIONAL>というタグを用い
+その範囲内の文字列に関するタグは評価の対象から外す。その範囲を越えたタグの
+ペアについては不正解とする。
+
+例：
+
+ 正解データ：                    <OPTIONAL>成田空港</OPTIONAL>問題について
+ 回答１(対象外)：                <ORGANIZATION>成田空港</ORGANIZATION>問題について
+ 回答２(対象外)：                <LOCATION>成田</LOCATION>空港問題について
+ 回答３(対象外)：                成田空港問題について
+ 回答４(不正解,Over-generate)：  <ARTIFACT>成田空港問題</ARTIFACT>について
+
+オプショナルについて、正解データの中ではその詳細をなるべく記述するようにする。
+フォーマットは以下のように定める。
+
+  <OPTIONAL POSSIBILITY=possible-entities TYPE=number>
+
+possible-entitiesは、固有名の種類をカンマ(,)で区切って列挙する。
+TYPEは以下に挙げるOPTIONALになった特別の理由を記録するためのフィールドである。
+
+ 0: デフォルト。特に指定された理由に該当しない場合。
+          <OPTIONAL POSSIBILITY=ORGANIZATION,LOCATION TYPE=0>成田空港</OPTIONAL>
+
+ 1: 語源にまで遡らなければならない。
+      例：オーデ<OPTIONAL POSSIBILITY=NONE,PERSON TYPE=1>コロン</OPTIONAL>
+          <OPTIONAL POSSIBILITY=NONE,LOCATION TYPE=1>フランス</OPTIONAL>人形
+
+ 2: 空想上の表現でどの固有名か曖昧なもの。
+      例： <OPTIONAL POSSIBILITY=NONE,PERSON TYPE=2>ゼウス</OPTIONAL>
+
+ 3: 人を表わす役職名
+      例： <OPTIONAL POSSIBILITY=NONE,PERSON TYPE=3>天皇</OPTIONAL>
+           <OPTIONAL POSSIBILITY=NONE,PERSON TYPE=3>ローマ法王</OPTIONAL>
+
+ 4: 肩書が付いた人名の慣用的表現
+      例： <OPTIONAL POSSIBILITY=NONE,PERSON TYPE=4>清少納言</OPTIONAL>
+           <OPTIONAL POSSIBILITY=NONE,PERSON TYPE=4>紫式部</OPTIONAL>
+
+
+２．試験に関して
+
+２．１．対象データ
+
+本試験の対象データは、１９９９年４月１４日から５月１３日の毎日新聞のデータからの
+１００記事とする。試験はドメインを限らないものとドメインを限ったものの二種類を
+行なう。限定ドメインについては３月３１日に発表し、ドメイン依存性およびシステムの
+ポータビリティを見る目的で実験を行なう。開発に関して、１９９９年４月１３日までに
+存在する知識はどのような物をも使用して構わない。記事の比率は非限定ドメインと限定
+ドメインで30：70から40：70程度を目安とするが実際の記事を見て最終的に判断される。
+
+
+２．２．システム開発
+
+システム開発は，１９９９年４月１３日で凍結し、そのシステムを使って５月１３日
+に配布される対象データに対してシステムを走らせる。
+
+
+２．３．対象部分
+
+ドキュメント中で固有表現を抽出する対象部分は、ヘッドライン、要約、およびテキス
+トの範囲のみとする。(注意：日付の部分は除く。) それらの部分は、HEADLINE,SUMMARY
+または、TEXTというSGMLのダグで指定された範囲である。(そのフォーマットは毎日新聞
+をmai2sgml.plでSGMLフォーマットに変換した物と同様の物である。)
+
+
+２．４．データの交換
+
+１９９９年５月１３日に評価対象記事を電子メイルによって参加者に配布する。参加者
+は同年５月１７日までに、提供されているteaツールによって作成されたオフセット情
+報である結果ファイルをＩＲＥＸ結果提出アドレス(irex-submit@karc.crl.go.jp)まで
+送付する。
+
+
+２．５．試験の実行
+
+試験の実行は、試験期間中に一回だけ行なえる。ただし、実行中にシステムがクラッシ
+ュした場合や、出力ファイルにフォーマットのエラーが見付かった場合は、その内容を
+人間が見る事なしに、次の記事から再度実行を開始できる。そのための記事セットは
+記事番号インデックスファイルを作成し、記事抽出を再度行なう事で作成する。
+記事の中味は試験期間中に人間が見る事は禁止する。人間が見ない限り、システムが
+繰り返し記事を見渡す事は許される。
+
+
+２．６．評価
+
+一つの表現の範囲および種類が正確に抽出された時のみ正解とする。評価は、適合率(Pre
+cision)と再現率(Recall)に基いて計算されるF-measureという値を利用する。適合率と
+は、システムが生成した結果の中でどれだけが正解だったかの割合を示す。再現率は、
+全正解中で、システムがどれだけ正解を見つけられたかの割合を示す。例えば、4つの固
+有表現が正解としてあったとし、システムが、5つの表現を出力し、3つが正解だったと
+すると適合率と再現率は以下のようになり、F-measureも以下の定義で求まる。
+
+         適合率： P = 3/5 = 60%
+         再現率： R = 3/4 = 75%
+
+         F-measure = (b^2 + 1)*P*R / (b^2*P + R)
+
+F-measureとは、評価をひとつの数字で表現できるという利点はもとより、例えば、以下
+のような突飛なシステムの評価を正当に行なるという利点もある。あるシステムは、全
+ドキュメント中で1つしか結果を出力しない。それが正解である場合は、再現率は非常に
+低いが、適合率は100%である。しかし、このようなシステムのF-measureは非常に低くな
+る。逆に、あるシステムは、結果を非常に沢山出力する。その中に正解が含まれる確率
+は高くなり再現率は高くなるが、逆に適合率が低くなる。相対的にこのようなシステム
+のF-measureは低くなる。ただし、アプリケーションによっては、適合率が重要な場合や
+逆に再現率が重要な場合もあると思われるが、そのような場合はF-measure定義の中の定
+数bを調整する事によって、適合率と再現率のバランスの変更ができる。
+
+
+２．６　正解データの修正
+
+試験のために作成された正解データは、参加者のリクエストによって修正される事が
+ある。特に断りのない限りにおいては、正解データが発表されてから1ヶ月間は、参加者
+は公表された正解データに関して、質問、修正のリクエストを提出する事ができ、正解
+作成者グループはそのリクエストの妥当性を検討し、妥当であると判断された物に対し
+ては、正解を修正する。最終的な評価は、この修正された正解データを用いて行なう。
+
+
+３．定義
+
+
+３．１　固有名詞的表現
+
+固有名詞的表現は、組織名、人名、地名、固有物名の固有の対象を示す表現を言う。
+
+固有名詞や固有名詞を含む複合語、その省略形などの形で表現されている。ただし、指
+示代名詞や普通名詞を利用した照応表現はここでの抽出対象には含まない。(例：それ、
+当局、同県、委員会)
+
+表現が、例えば、組織名にも地名にも取れるものがある。(例：成田空港問題。成田空港
+に着陸した。ホワイトハウスの発表。ホワイトハウスに到着した。)その場合は、使用さ
+れているコンテクストから、それがその場合にどちらを意味するかを参考に判断する。
+それでも曖昧なものについてはOPTIONALを利用する。
+
+以下に固有名詞的表現全体に適用される規則を示す。
+
+
+３．１．Ａ　部分表現
+
+名詞連続や接辞が付いたものでも、その一部に固有名詞的表現を含む場合はそれを抽出
+する。また、全体として慣用的に普通名詞的に用いられている場合には、そのうちの一
+部が固有名詞的表現であっても、語源まで逆登らなければいけないような場合や、「言
+語」の場合、その他曖昧な物についてはOPTIONALとする。表記上地名ではない物(アメ
+リカン、ナポリタン等)はまったく抽出しない。
+
+<ORGANIZATION>ＮＨＫ</ORGANIZATION>番組
+<PERSON>クリントン</PERSON>大統領
+<LOCATION>日本</LOCATION>市場
+<ORGANIZATION>米軍</ORGANIZATION>機
+<ORGANIZATION>衆</ORGANIZATION><ORGANIZATION>参</ORGANIZATION>議長
+<ORGANIZATION>労働党</ORGANIZATION>員
+<ORGANIZATION>沖電気関西研究所</ORGANIZATION>長
+<ORGANIZATION>沖電気関西研究所</ORGANIZATION>所長
+<ORGANIZATION>製造物責任問題検討会</ORGANIZATION>委員長
+<ORGANIZATION>武蔵野音大</ORGANIZATION>大学院
+来<LOCATION>日</LOCATION>
+訪<LOCATION>米</LOCATION>
+<ORGANIZATION>文</ORGANIZATION>相
+<ORGANIZATION>農水</ORGANIZATION>大臣
+<PERSON>鈴木</PERSON>家
+<LOCATION>フィリピン</LOCATION>人
+在<LOCATION>エジプト</LOCATION><LOCATION>日本</LOCATION>企業
+<LOCATION>パリ</LOCATION>ジェンヌ
+<LOCATION>江戸</LOCATION>っ子
+<LOCATION>京</LOCATION>女
+<LOCATION>東</LOCATION>男
+<OPTIONAL>フランス</OPTIONAL>人形
+<OPTIONAL>フランス</OPTIONAL>料理
+<OPTIONAL>瀬戸</OPTIONAL>物
+<OPTIONAL>唐</OPTIONAL>きび
+<OPTIONAL>五右衛門</OPTIONAL>風呂
+<OPTIONAL>川崎</OPTIONAL>病
+<OPTIONAL>ハンセン</OPTIONAL>氏病
+オー・デ・<OPTIONAL>コロン</OPTIONAL>
+<OPTIONAL>漢</OPTIONAL>字
+<OPTIONAL>英</OPTIONAL>語
+<OPTIONAL>和</OPTIONAL><OPTIONAL>英</OPTIONAL>辞典
+アメリカンコーヒー
+スパゲッティーナポリタン
+
+
+３．１．Ｂ　助詞「の」、特殊記号
+
+助詞の「の」や特殊記号の「，．・／　(スペース)」等は固有表現を分割し、いずれ
+の固有表現もそれを含まない。ただし、慣用的にそのような物を含む表現や、人名で
+苗字と名前を記号で継げるような場合には、それを含む。
+
+<ORGANIZATION>日本銀行福岡支店</ORGANIZATION>
+<ORGANIZATION>日本銀行</ORGANIZATION>の<LOCATION>福岡</LOCATION>支店
+<ORGANIZATION>日本銀行</ORGANIZATION>・<LOCATION>福岡</LOCATION>支店
+<LOCATION>大阪</LOCATION>の工場
+<ORGANIZATION>京大</ORGANIZATION>の<PERSON>長尾眞</PERSON>氏
+<LOCATION>東京</LOCATION>　<LOCATION>銀座</LOCATION>
+<ORGANIZATION>影の内閣</ORGANIZATION>
+<PERSON>ビル・クリントン</PERON>
+
+
+３．１．Ｃ　連続固有表現
+
+連続固有表現はそれぞれが独立した固有表現で、前のものが、後のもののスーパークラ
+スになっている場合は分割しない。ただし、並列な固有表現が連続している場合には
+それらは分割する。また、部分的な並列表現で分割すると違った意味のものを生んで
+しまう場合には分割しない。
+
+<ORGANIZATION>日本銀行福岡支店</ORGANIZATION>
+<ORGANIZATION>東工大水泳部</ORGANIZATION>
+<ORGANIZATION>東京読売巨人軍</ORGANIZATION>
+<LOCATION>東京都目黒区大岡山２−１２−１</LOCATION>
+<LOCATION>東京銀座</LOCATION>
+<LOCATION>米軍立川基地</LOCATION>
+<LOCATION>東京</LOCATION><LOCATION>大阪</LOCATION>
+<LOCATION>日</LOCATION><LOCATION>韓</LOCATION>両国
+<LOCATION>欧</LOCATION><LOCATION>米</LOCATION>
+<LOCATION>薩</LOCATION><LOCATION>長</LOCATION>
+<ORGANIZATION>衆</ORGANIZATION><ORGANIZATION>参</ORGANIZATION>議長
+<LOCATION>チェコスロバキア</LOCATION>
+<LOCATION>南北朝鮮</LOCATION>
+<LOCATION>中南米</LOCATION>
+<ORGANIZATION>衆参議院</ORGANIZATION>
+
+また、正式名称であると分る物はすべてまとめて抽出する。
+
+<ORGANIZATION>在ナイジェリア日本大使館</ORGANIZATION>
+
+
+３．１．Ｄ　省略形、ニックネーム
+
+省略形、ニックネームは固有表現が含まれている場合はすべて抽出する。ただし、省略
+であっても一般名詞のみを使い照応として使われている場合は抽出しない。
+
+<ORGANIZATION>ＮＲＡ</ORGANIZATION>
+<ORGANIZATION>ホワイトハウス</ORGANIZATION>の発表によると
+<ORGANIZATION>広島</ORGANIZATION>対<ORGANIZATION>巨人</ORGANIZATION>
+<LOCATION>北朝鮮</LOCATION>
+<PERSON>きょん２</PERSON>
+<PERSON>ミッチー</PERSON>コール
+<ORGANIZATION>明治</ORGANIZATION>   (明治生命と文脈で分る場合)
+<ORGANIZATION>東武鉄道</ORGANIZATION>．．．当鉄道は．．．
+<PERSON>田中<PERSON>教授．．．教授は．．．
+
+
+３．１．Ｅ　入れ子
+
+入れ子の場合は、一番外の固有表現のみを抽出する。
+
+<ORGANIZATION>松下貿易（松貿）株式会社</ORGANIZATION>
+
+以下のような場合には注意が必要である。
+
+<ORGANIZATION>松下貿易株式会社</ORGANIZATION>（<ORGANIZATION>松貿</ORGANIZATION
+>）
+
+
+３．１．Ｆ　特殊シンボル
+
+かっこ、かぎかっこ、強調のためのシンボルは、それが固有表現の内部にあれば入れる
+が、外にある場合は入れない。
+
+<PERSON>ビト・”ザ・ゴッドファーザー”・コーレオン</PERSON>
+「<PERSON>橋竜</PERSON>」カラー
+<ARTIFACT>「平和のためのパートナーシップ」（ＰＦＰ）協定</ARTIFACT>
+
+
+３．１．Ｇ　漠然とした対象
+
+固有名詞的表現であっても、宗教名、特定の対象を示さないグループ名、漠然と複数の
+組織を示す表現は抽出しない。(特例：組織名として表現されている宗教名はオプショ
+ナルとする)
+
+民主リベラル新党
+過激派
+保守派
+<LOCATION>セルビア</LOCATION>人勢力
+ＪＲ各社
+国営四現業
+関係七組合
+夏の収穫祭
+警察
+彼はイスラム原理主義者である。
+<OPTIONAL>浄土真宗本願寺派<OPTIONAL>がビデオを発売した。
+<OPTIONAL>オウム真理教<OPTIONAL>が訴えを起した。
+
+ 但し、
+
+<ORGANIZATION>警察庁</ORGANIZATION>
+<ORGANIZATION>東京都警視庁</ORGANIZATION>
+
+
+３．１．Ｈ　イベント名、事件名
+
+イベント名は、いづれの固有表現にも当らないとし抽出しない。
+
+<LOCATION>長野</LOCATION>オリンピック
+<LOCATION>リオ</LOCATION>・カーニバル
+<ORGANIZATION>リクルート</ORGANIZATION>事件発覚
+<ORGANIZATION>ロッキード</ORGANIZATION>事件
+通常<ORGANIZATION>国会</ORGANIZATION>
+<LOCATION>湾岸</LOCATION>戦争
+
+
+３．１．Ｉ　漢字の読み
+
+漢字の名前等の読みが（）内等に記述されている場合、その読みについても抽出する。
+
+<PERSON>有馬朗人</PERSON>氏（<PERSON>ありま・あきと</PERSON>）
+<PERSON>京極純一</PERSON>氏（<PERSON>きょうごく・じゅんいち</PERSON>）
+<PERSON>長尾眞</PERSON>（<PERSON>まこと</PERSON>）氏
+
+
+３．１．Ｊ　接頭辞
+
+「旧」「新」等の接頭辞は一般に、個体を区別するために付いているので、固有表現に
+含める。
+
+<LOCATION>旧ユーゴスラビア</LOCATION>
+<ORGANIZATION>新田中派</ORGANIZATION>
+
+
+３．１．Ｋ　空想上の対象
+
+空想上の対象でも、それが組織名、人物、地名、固有物名を現わすものであれば、タグ
+付けする。物語、本、小説、劇、芝居、テレビ、ラジオなどの場合でも同様である。
+ただし、空想上の対象でも、明かにそのような対象外であるもの(例えば、空想上の動物)
+はタグ付けしない。その中間である曖昧な対象はOPTIONALとする。
+
+<PERSON>アリス</PERSON>は不思議な国を旅行します。
+<PERSON>寅さん</PERSON>が<LOCATION>富士見山</LOCATION>に出掛けました。
+<ORGANIZATION>地球防衛軍</ORGANIZATION>の<PERON>南</PERSON>隊長
+ミッキーマウス
+みなしごハッチ
+<OPTIONAL>サイボーグ００９</OPTIONAL>
+<ARTIFACT>ギリシャ神話</ARTIFACT>の<OPTIONAL>ゼウス</OPTIONAL>
+
+
+３．１．Ｌ　仮名
+
+仮名を使用した表現は抽出しない。
+
+仮名：田中太郎氏
+仮名：Ａ氏
+少年Ａは...
+企業Ｂの発売した商品Ｃ
+
+
+３．１．Ｍ　一般的な表現
+
+一般的な表現を使用し、文脈を使用しないと特定の対象を認定できない表現は、それを
+固有名として抽出しない。
+
+総務部
+首都
+<LOCATION>福岡</LOCATION>支店
+
+ただし、組織名の連続表現で、上下関係の組織名が連続している時などには組み合わせ
+て組織名とする。(３．１．Ｃを参照の事)
+
+<ORGANIZATION>日本銀行福岡支店</ORGANIZATION>
+
+また、慣用的にそのような一般的な表現であるが、それが特定の対象を指している場合
+や普通名詞の組み合わせなどで固有名を指している場合には抽出する。
+
+<ORGANIZATION>国会</ORGANIZATION>
+<ORGANIZATION>影の内閣</ORGANIZATION>
+
+
+３．１．Ｎ 新聞の名前
+
+新聞の名前は、「報じる」「インタビューした」というような動作の主体となっている
+場合には組織名とし、「に載っている」といった物として暑かわれている場合には
+固有物名とする。
+
+<ORGANIZATION>毎日新聞</ORGANIZATION>が行なったアンケートによると、
+１５日付けの<ARTIFACT>ニューヨークタイムズ</ARTIFACT>によると、
+
+
+３．１．１　組織名
+
+組織名とは、複数の人間で構成され、共通の目的を持った組織等の名称の事である。株
+式会社等の会社、固有の政府組織、学校、軍、スポーツチーム、国際組織、労働組合、
+工場、ホテル、空港、病院、教会やなんらかの目的を持ったグループ等もその対象が組
+織としての意味で使われている文脈においては組織名とする。政府組織に関する注意事
+項は３．１．１．Ｂを参照の事。
+
+<ORGANIZATION>富士通研究所株式会社</ORGANIZATION>
+<ORGANIZATION>国会</ORGANIZATION>
+<ORGANIZATION>九州工業大学工学部</ORGANIZATION>
+<ORGANIZATION>区立八雲小学校</ORGANIZATION>
+<ORGANIZATION>アメリカ軍</ORGANIZATION>
+<ORGANIZATION>パレスチナ警察部隊</ORGANIZATION>
+<ORGANIZATION>西武ライオンズ</ORGANIZATION>
+<ORGANIZATION>国連</ORGANIZATION>
+<ORGANIZATION>欧州連合</ORGANIZATION>
+<ORGANIZATION>ＪＲ東日本</ORGANIZATION>
+<ORGANIZATION>富士通労組</ORGANIZATION>
+<ORGANIZATION>宮田工場</ORGANIZATION>
+<ORGANIZATION>全日空ホテル</ORGANIZATION>
+<ORGANIZATION>三沢基地</ORGANIZATION>
+<ORGANIZATION>成田空港</ORGANIZATION>
+<ORGANIZATION>長野歯科</ORGANIZATION>
+<ORGANIZATION>聖オルバン教会</ORGANIZATION>
+<ORGANIZATION>サザンオールスターズ</ORGANIZATION>
+<ORGANIZATION>ＩＲＥＸ実行委員会</ORGANIZATION>
+<ORGANIZATION>改革ビジョン委員会</ORGANIZATION>
+
+
+３．１．１．Ａ　接辞
+
+組織名を表す接辞は組織名に含める。
+
+<ORGANIZATION>松下電器産業株式会社</ORGANIZATION>
+<ORGANIZATION>学校法人みどり学園</ORGANIZATION>
+<ORGANIZATION>（財）計量計画研究所</ORGANIZATION>
+
+
+３．１．１．Ｂ　政府組織
+
+省庁等の政府組織、政党、政党内派閥、軍隊、大使館のような固有の組織の名称は組織
+名とする。
+
+<ORGANIZATION>通産省</ORGANIZATION>
+<ORGANIZATION>参院</ORGANIZATION>
+<ORGANIZATION>経団連</ORGANIZATION>
+<ORGANIZATION>自民党</ORGANIZATION>
+<ORGANIZATION>宮沢派</ORGANIZATION>
+<ORGANIZATION>創政会</ORGANIZATION>
+<ORGANIZATION>ロシア軍</ORGANIZATION>
+<ORGANIZATION>在ナイジェリア日本大使館</ORGANIZATION>
+
+「与野党」「与党」「野党」は固有の名前ではなく、政党の種類を示す普通名詞と判断
+し、組織名とはしない。また、閣議は組織ではない。
+
+与野党
+与党
+野党
+閣議
+
+
+政権名、政府名は対象の範囲が具体的、確定的でなく慣用的に用いられる名称であるた
+め、全体としては組織名としない。
+
+<PERSON>細川</PERSON>政権
+<PERSON>クリントン</PERSON>政権
+<LOCATION>日本</LOCATION>政府
+<LOCATION>米</LOCATION>政府
+
+ただし、内閣は対象が明確になっているため、固有名詞表現と共に用いられるときには
+組織名とする。
+
+<ORGANIZATION>橋本内閣</ORGANIZATION>
+<ORGANIZATION>影の内閣</ORGANIZATION>
+
+３．１．１．Ｃ　スポーツリーグ等の名前
+
+スポーツのリーグ名は運営組織の名前でもある事もあるが、直接に組織を指してない
+場合にはOPTIONALとする。
+
+<OPTIONAL>Ｊリーグ</OPTIONAL>
+<OPTIONAL>プロ野球</OPTIONAL>
+<OPTIONAL>大リーグ</OPTIONAL>
+
+
+３．１．２　人名
+
+３．１．２．Ａ　役職名、敬称
+
+役職名、敬称などは人名に含めない。
+
+<PERSON>長尾</PERSON>総長
+<PERSON>田中</PERSON>教授
+プロフェッサー・<PERSON>グリッシュマン</PERSON>
+<PERSON>石川</PERSON>氏
+
+役職名がそのまま特定の人を表わし、文脈的にもその表現が役職ではなく人を表わして
+いるような場合はOPTIONALとする。襲名する名前については３．１．２．Ｄを参照の事。
+
+<OPTIONAL>天皇</OPTIONAL>
+<OPTIONAL>ローマ法王</OPTIONAL>
+<OPTIONAL>ダライラマ</OPTIONAL>
+
+ただし、一般に役職名として使用される表現で照応として使われている場合にはOPTIONAL
+としない。
+
+首相
+大統領
+
+
+３．１．２．Ｂ　賞名
+
+固有の賞などに名前が使用されていても、人名とはしない。賞は固有物名とする。
+
+<ARTIFACT>ノーベル賞</ARTIFACT>
+<ARTIFACT>芥川賞</ARTIFACT>
+
+
+３．１．２．Ｃ　肩書が付いた慣用的表現
+
+人名に肩書が付いて慣用的に表現されている人名はOPTIONALとする。慣用的がどうかの
+判断は正解作成者の判断とする。
+
+<OPTIONAL>清少納言</OPTIONAL>
+<OPTIONAL>紫式部</OPTIONAL>
+<OPTIONAL>虞美人</OPTIONAL>
+<PERSON>エリザベス</PERSON>女王
+
+
+３．１．２．Ｄ　襲名する名前
+
+襲名する名前は人名とする。また、固有のエンティティーを示す数字などの表現が
+付いた場合はそれも含めて人名とする。
+
+<PERSON>木村庄之助</PERSON>
+横綱<PERSON>若ノ花</PERSON>
+<PERSON>第十四代木村庄之助</PERSON>
+<PERSON>先代若ノ花</PERSON>
+<PERSON>本因坊</PERSON>
+
+
+３．１．３　地名
+
+地名は、大陸、国名、地域名、都市名、地方名、県名、町名、村名、道路名、住所、駅
+名、線路名、モニュメント、海洋名、湾、運河、川名、池名、湖名、島、公園、山、砂
+漠の名前などを含む。(星、惑星、衛星の名前等は地名としない。)
+
+
+<LOCATION>太平洋</LOCATION>
+<LOCATION>東京都</LOCATION>
+<LOCATION>入間郡</LOCATION>
+<LOCATION>日本</LOCATION>
+<LOCATION>北方領土</LOCATION>
+<LOCATION>対馬海峡</LOCATION>
+<LOCATION>関東山脈</LOCATION>
+<LOCATION>銀座</LOCATION>
+<LOCATION>県道１０４号線</LOCATION>
+<LOCATION>井の頭線</LOCATION>
+<LOCATION>太宰府天満宮</LOCATION>
+<LOCATION>富士インターチェンジ</LOCATION>
+<LOCATION>法隆寺駅</LOCATION>
+<LOCATION>隅田川</LOCATION>
+<LOCATION>富士山</LOCATION>
+<LOCATION>北海油田</LOCATION>
+<LOCATION>チュメニ油田</LOCATION>
+<LOCATION>オランダ</LOCATION>人
+地球
+月
+北極星
+
+
+３．１．３．Ａ　組織名の前に付く国名
+
+組織名に国名などが付いている場合は、その名前が正式な組織名に含まれている場合に
+は、組織名として含むが、修飾語として付いている場合には、地名として別に扱う。
+
+<ORGANIZATION>日本鋼管</ORGANIZATION>
+<ORGANIZATION>日本ＩＢＭ</ORGANIZATION>
+<LOCATION>独</LOCATION><ORGANIZATION>フォルクスワーゲン社</ORGANIZATION>
+<LOCATION>米</LOCATION><ORGANIZATION>アメリカン航空</ORGANIZATION>
+<LOCATION>アメリカ</LOCATION><ORGANIZATION>国防省</ORGANIZATION>
+<LOCATION>米</LOCATION><ORGANIZATION>国防省</ORGANIZATION>
+
+
+３．１．３．Ｂ 単独に用いられている地名
+
+単独に用いられている地名は、それが組織を指すような場合でも地名とする。
+
+<LOCATION>アメリカ</LOCATION>の圧力
+<LOCATION>永田町</LOCATION>の決断
+
+
+３．１．３．Ｃ　概略的表現
+
+地方、地域、周辺、内、圏、諸国、方角、部、沿岸、沖などのついた概略的表現は
+地名表現には入れない。
+
+<LOCATION>竹島</LOCATION>周辺
+<LOCATION>竹島</LOCATION>北部
+<LOCATION>竹島</LOCATION>南
+南<LOCATION>竹島</LOCATION>
+<LOCATION>関東</LOCATION>地方
+<LOCATION>北極</LOCATION>圏
+<LOCATION>東欧</LOCATION>諸国
+<LOCATION>宮城県</LOCATION>沖
+<LOCATION>静岡県</LOCATION>沿岸
+国内
+都内
+県内
+道内
+<LOCATION>北海道</LOCATION>内
+海外
+
+ただし、方角の付いた地名が正式な地名である場合には、含めて地名とする。
+
+<LOCATION>南阿佐ヶ谷</LOCATION>
+<LOCATION>中南米</LOCATION>
+
+
+３．１．３．Ｄ 民族名
+
+同等の地名が存在しない民族名は地名としない。曖昧な場合にはOPTIONALとする。
+
+マサイ族
+ツチ族
+アイヌ人
+
+
+３．１．３．Ｅ 郵便番号
+
+郵便番号は地名に含めない。
+
+〒１５０<LOCATION>東京都渋谷区恵比寿４の２０の１</LOCATION>
+
+
+３．１．３．Ｆ　駅名
+
+駅名の前に会社名、路線名が付いている場合には合せて地名とする。
+
+<LOCATION>ＪＲ新宿駅</LOCATION>
+<LOCATION>山陽本線大久保駅</LOCATION>
+
+
+３．１．３．Ｇ　国籍名
+
+国籍の場合には、国名との区切が曖昧であるが以下のように「国籍」という部分を
+除いた部分だけを地名とする。
+
+<LOCATION>日本</LOCATION>国籍
+<LOCATION>カナダ</LOCATION>国籍
+<LOCATION>英</LOCATION>国籍
+<LOCATION>韓</LOCATION>国籍
+
+
+３．１．３．Ｈ　細部の場所
+
+地名は最低、建物の単位までとし、階数や、建物内の特殊な場所のような細部までは
+地名としない。
+
+<LOCATION>エンパイヤービル</LOCATION>１０２階
+<LOCATION>新宿駅</LOCATION>南口
+<LOCATION>成田空港第１旅客ターミナルビル</LOCATION>南ウィング
+
+
+３．１．４　固有物名
+
+人間の活動によって作られた具体物、抽象物を含む物の固有の名前
+
+
+３．１．４．Ａ　商品と種類
+
+一般に商品を指す商標は商品名であり、固有物名としてタグ付けする。
+クラスと判断される物については固有物名として抽出しない。
+
+<ARTIFACT>魚沼産コシヒカリ</ARTIFACT>
+コシヒカリ
+<ARTIFACT>ペンティアムプロセッサ</ARTIFACT>
+<ARTIFACT>ペンティアム２００ＭＨｚ</ARTIFACT>
+ＣＰＵチップ
+<ARTIFACT>カローラ</ARTIFACT>
+乗用車
+<ARTIFACT>パナファックス</ARTIFACT>
+ファックス
+ナショナル冷蔵庫
+
+
+３．１．４．Ｂ　抽象物名
+
+著作権、知的所有権が主張可能であるような作品名、出版物、成果物、法律名、
+法案名、条約名、理論名等の抽象的な物も現実に文書などの形で存在するものは
+固有物名とする。
+
+<ARTIFACT>おしん</ARTIFACT>
+<ARTIFACT>渡る世間は鬼ばかり</ARTIFACT>
+<ARTIFACT>ベートーベンピアノ協奏曲５番</ARTIFACT>
+<ARTIFACT>企業福祉度調査結果報告書</ARTIFACT>
+<ARTIFACT>憲法</ARTIFACT>
+<ARTIFACT>民法</ARTIFACT>
+<ARTIFACT>放送法</ARTIFACT>
+<ARTIFACT>ＰＬ法案</ARTIFACT>
+<ARTIFACT>サンフランシスコ条約</ARTIFACT>
+<ARTIFACT>日米安保</ARTIFACT>
+
+
+３．１．４．Ｃ　建築物
+
+建築物も、それがコンテクスト上、物として表現されている時には固有物名とする。
+
+<ARTIFACT>敦賀原発１号機</ARTIFACT>が竣工した。
+<ARTIFACT>エンパイアーステートビル</ARTIFACT>の完成は１９３１である。
+
+
+３．１．４．Ｄ　行為
+
+訴訟、判決、活動のような行為が主な要因である名前は固有物名としない。
+
+第三次<ORGANIZATION>横田基地</ORGANIZATION>騒音訴訟
+<ORGANIZATION>最高裁</ORGANIZATION>判決
+ＰＫＯ
+
+
+３．１．４．Ｅ　賞名
+
+賞の名前は固有物名とするが、ランキングに関するものは固有物名としない。ただし、
+賞の名前でも、単独に書かれていて、文脈を使わずにそれだけでは何の賞だか分ら
+ない場合にはOPTIONALとする。
+
+<ARTIFACT>ノーベル賞</ARTIFACT>
+<ARTIFACT>芥川賞</ARTIFACT>
+<OPTIONAL>最優秀賞</OPTIONAL>
+<OPTIONAL>大賞</OPTIONAL>
+第６０回全国高校野球選手権優勝
+金メダル
+六位入賞
+
+
+３．１．４．Ｆ　理論，法則、学説、論文
+
+理論、法則、学説、等も、たとえそれが自然の描写であっても、人間が作るため人工物
+であるため、固有物名とする。
+
+<ARTIFACT>特殊相対性理論</ARTIFACT>
+<ARTIFACT>ホーキング宇宙論</ARTIFACT>
+<ARTIFACT>地動説</ARTIFACT>
+ハンチントンの「<ARTIFACT>文明の衝突</ARTIFACT>」という論文
+<ARTIFACT>ハンチントン論文</ARTIFACT>
+
+
+３．１．４．Ｇ　ブランド名
+
+ブランド名は文脈により、組織名または固有物名となる。
+
+<ORGANIZATION>グッチ</ORGANIZATION>のバック
+<ARTIFACT>グッチ</ARTIFACT>を買ってもらった。
+
+
+３．１．４．Ｈ　物のクラス
+
+物のクラスを表わす表現は固有物名としない。ただし、ある決まった範囲の物に固有名
+が付いている場合には固有物名とする。
+
+<ORGANIZATION>森永</ORGANIZATION>アイスクリーム
+<PERSON>橋田</PERSON>ドラマ
+<ARTIFACT>エンデバーＡＴシリーズ</ARTIFACT>
+<ARTIFACT>カローラ</ARTIFACT>
+
+
+３．１．４．Ｉ　一般名詞的な使用
+
+商標となっている固有物名でも、コンテクストとして一般的な用いられ方がされている
+時には固有物名としない。
+
+彼は<ORGANIZATION>シャープ</ORGANIZATION>のウオークマンを買った。
+このホッチキスは使いやすい。
+あのセスナ機はとても綺麗だ。
+
+
+３．１．４．Ｊ  株
+
+明かに株の事を差していると分る物は固有物名とする。最後に「株」という接辞がない
+会社名で、文脈上も株かどうか判断の付かない場合には組織名とする。
+
+
+３．１．４．Ｋ  サービス名
+
+抽象的なサービスの名前も商品名同様に固有物名とする。たとえば、以下のように列車
+や飛行機の便名は、その車体や機体を指している訳ではなく、そのサービスに付せられ
+たサービスの名前だとする。ただし、ＭＭＦ、ＰＬ保険など一般的な名前はクラス名と
+判断する。
+
+<ARTIFACT>ひかり１２３号</ARTIFACT>
+<ARTIFACT>ＪＡＬ１０便</ARTIFACT>
+ＭＭＦ
+ＰＬ保険
+
+
+３．１．４．Ｌ　主義、制度、税
+
+主義、制度、税の名前は固有物名とはしない。
+
+資本主義
+中選挙区制度
+消費税
+
+
+３．１．４．Ｍ　テレビ番組名、講演名
+
+本、テレビ、ビデオ、映画の名前は固有物名とするが、講演名、講座名は行為とも
+見倣せるためOPTIONALにする
+
+「<ARTIFACT>世界の終りとハードボイルドワンダーランド</ARTIFACT>」
+<ARTIFACT>紅白歌合戦</ARTIFACT>
+<ARTIFACT>Ｅ．Ｔ．</ARTIFACT>
+「<OPTIONAL>日本文化のコンセプト</OPTIONAL>」という講演
+「<OPTIONAL>女性学講座</OPTIONAL>」
+
+
+３．２　時間表現
+
+時間表現では、絶対的な表現(例えば、１９９８年５月１４日)や，基点が明確であり絶
+対的な時間が分るような相対的な表現(記事の日付を含む文脈に基点としての今日が明確
+である場合の「前日」)を抽出する。日時は、その単位が24時間以上である物を差し、時
+間は、その単位が24時間以下であるものを指す。また、実時間のタイムライン上にマッピ
+ングできる物は、その具体的な時期を確定できなくても時間表現とする。
+
+<DATE>５月１４日</DATE><TIME>午後５時２５分</TIME>
+<DATE>９月</DATE>最初の<DATE>月曜</DATE><TIME>正午</TIME>
+<LOCATION>日本</LOCATION>時間<DATE>１４日</DATE><TIME>３時７分４４秒</TIME>
+<DATE>去年</DATE>の<DATE>春休み</DATE>
+<DATE>ある秋</DATE>の<DATE>日</DATE>
+ロケに行った<DATE>前日</DATE>
+
+
+３．２．Ａ 相対的表現
+
+以下のような相対的表現は基点が文脈から明かであり、特定の日付を差している場合は
+時間表現とする。特定の時なのか長さを指しているのか曖昧な場合にはOPTIONALにする。
+
+<DATE>前日</DATE>
+<DATE>前世紀</DATE>
+<DATE>昨秋</DATE>
+<DATE>一昨日</DATE>
+<DATE>先月</DATE>
+<DATE>今週</DATE>の<DATE>土曜日</DATE>
+<DATE>今週土曜日</DATE>
+<DATE>今年</DATE>
+<DATE>本日</DATE>
+<DATE>来週</DATE>
+<DATE>翌年</DATE>
+<DATE>次週</DATE>
+<DATE>４日後</DATE>
+<DATE>一ヶ月前</DATE>
+<DATE>来年末</DATE>
+<DATE>今世紀初め</DATE>
+<TIME>昨夜</TIME>
+<TIME>今晩</TIME>
+<TIME>今夜</TIME>
+<TIME>明晩</TIME>
+<TIME>翌朝</TIME>
+失踪<DATE>前日</DATE>
+優勝戦<TIME>前夜</TIME>
+創業<DATE>１０周年</DATE>
+<OPTIONAL>戦後５０年</OPTIONAL>の年
+<DATE>数日前</DATE>から行方不明であった
+
+
+３．２．Ｂ 特定の時を指さない表現
+
+例えば、「彼等は毎年、前年の例に習っている」という場合の前年は相対的表現では
+あるが、一般的な表現であり、どの年か特定する物ではないので時間表現とはしない。
+
+彼等は毎年、前年の例に習っている
+毎週金曜午後六時
+新春恒例
+
+クラスとして表現されている季節なども、特定の時を指していないので時間表現とはしない。
+
+夏は暑いものだ。
+<DATE>今年</DATE>は選択の年
+朝刊、夕刊
+
+また、漠然とした表現も時間表現とはしない。ただし、今日(こんにち)に
+ついては、３．２．Ｊを参考の事。
+
+現在
+最近
+晩年
+後日
+
+
+３．２．Ｃ 範囲表現
+
+範囲表現は、全体を時間表現とはせずに、個別の部分を抽出する。
+
+<DATE>４月３日</DATE>から<DATE>４月１１日</DATE>まで
+<TIME>４時</TIME>以降<TIME>５時</TIME>まで
+<DATE>６月</DATE>一杯
+<DATE>４月</DATE>内
+
+
+３．２．Ｄ 照応
+
+照応的表現で時間を表わしている場合は時間表現として抽出しない。これは、指示代名
+詞を利用した複合的表現でも同様である。
+
+この日
+その時
+同日
+当日
+即日
+一両日
+
+ただし、以前の文脈を照応で利用したような表現があった場合に、照応
+されていない部分があったら、その部分を時間表現として抽出する。
+
+１９９８年には、。。。。その<DATE>夏</DATE>
+
+
+３．２．Ｅ　時間の長さの表現
+
+一時の時間表現ではなく時間の長さとしての時間の表現は時間表現としない。
+
+２時間
+五週間
+それ以降の２３年間
+
+
+３．２．Ｆ ニックネーム、祝日、祭日
+
+慣用的に広く使用されている時代や時を表わす言語的表現も時間表現とする。ただし、
+形容的に表現されている場合や、限られたコミュニティのみで使用されている物、
+開始、終了時間が不明である物は時間表現とはしない。この点で曖昧なものは
+OPTIONALとする。
+
+<DATE>徳川時代</DATE>
+<DATE>新石器時代</DATE>
+<DATE>関根名人時代</DATE>
+<DATE>ソ連時代</DATE>
+<DATE>こどもの日</DATE>
+<LOCATION>イスラエル</LOCATION><DATE>建国記念日</DATE>
+<DATE>みみの日</DATE>
+<DATE>鉄道の日</DATE>
+<DATE>細川内閣時代</DATE>
+<ORGANIZATION>東工大</ORGANIZATION>開校記念日
+<OPTIONAL>義母の日</OPTIONAL>
+<OPTIONAL>１１０番の日</OPTIONAL>
+燃えないゴミの日
+バブル時代
+新しい時代
+彼の全盛期
+<PERSON>野茂</PERSON>選手の<ORGANIZATION>新日鉄境</ORGANIZATION>時代
+
+
+３．２．Ｇ 連続表現
+
+入れ子や連続表現に関する規則は固有名詞的表現に準ずる。
+
+<DATE>１９７３（昭和４８）年１月</DATE>
+<DATE>１９７３年</DATE>（<DATE>昭和４８年</DATE>）
+<DATE>４月３−１１日</DATE>
+<DATE>４月３日</DATE>から<DATE>１１日</DATE>
+<DATE>４月３日</DATE>、<DATE>４日</DATE>
+<DATE>４月３日土曜日</DATE>
+<DATE>４月３日</DATE>の<DATE>土曜日</DATE>
+
+
+３．２．Ｈ　ぶり、以内
+
+「ぶり」や「以内」等を伴なった表現は特定の時を示すものではないので時間表現とは
+しない
+
+三ヶ月ぶり
+二年以内
+
+
+３．２．Ｉ　概略表現
+
+「頃」や「前後」といった概略表現は時間表現に含めない。ただし、相対的な表現の
+場合には、概略表現が含まれる場合もある。
+
+<TIME>５時</TIME>頃
+<TIME>午前七時</TIME>前
+<TIME>午前七時</TIME>すぎ
+<DATE>２月５日</DATE>前後
+<DATE>二十年くらい前</DATE>に起きた事件
+
+
+３．２．Ｊ　こんにち
+
+今日(こんにち)は漠然とした表現ではあるが、今日(きょう)との区別が難しいため
+すべて時間表現とする。
+
+
+３．２．Ｋ　スポーツなどでの時間
+
+スポーツなどにおける時間も時間表現とする。
+
+前半<TIME>１５分</TIME>
+その<TIME>１分後</TIME>、ボールはゴール内にあった。
+
+
+３．２．１　日付表現
+
+<DATE>２１世紀</DATE>
+<DATE>１９７０年代</DATE>
+<DATE>９８年</DATE>
+<DATE>昨年</DATE>の<DATE>春</DATE>
+<DATE>昨年春</DATE>
+<DATE>５月</DATE>
+<DATE>１９９８年５月１４日</DATE>
+<DATE>来年後半</DATE>
+<DATE>６月下旬</DATE>
+<DATE>６２年暮れ</DATE>
+
+
+３．２．２　時間表現
+
+<TIME>午後７時</TIME>
+<TIME>３：１２</TIME>
+<TIME>正午</TIME>
+<TIME>夜半</TIME>
+<TIME>未明</TIME>
+<TIME>早朝</TIME>
+<TIME>明け方</TIME>
+
+
+３．３　数値表現
+
+金額表現、割合表現を数値表現として抽出する。
+
+
+３．３．Ａ　概算表現
+
+概算表現は数値表現に含めない。
+
+約<MONEY>５００億円</MONEY>
+<MONEY>５０ドル</MONEY>以上
+<PERCENT>０．５％</PERCENT>くらい
+<PERCENT>２０％</PERCENT>台
+<MONEY>１０００円</MONEY>弱
+
+
+３．３．Ｂ　代理表現
+
+「数」「幾」等を使用した代理表現は数値表現とする。
+ただし、固定の値が存在しないと判断できる疑問的な代理表現は数値表現としない。
+
+<MONEY>数十兆円</MONEY>
+<MONEY>幾千万円</MONEY>
+<PERCENT>数十パーセント</PERCENT>
+各社で設定された○○パーセントという閾値
+
+
+３．３．Ｃ 範囲表現
+
+範囲表現は全体を数値表現とはせずに、個別の部分を数値表現とする。
+
+<MONEY>１１４円</MONEY>から<MONEY>１１６円</MONEY>の範囲
+<PERCENT>１５％</PERCENT>以上<PERCENT>２０％</PERCENT>以下
+
+
+３．３．Ｄ 連続表現
+
+入れ子や連続表現に関する規則は固有名詞的表現の規則に準ずる。
+
+<PERCENT>２０％</PERCENT>〜<PERCENT>３０％</PERCENT>
+<PERCENT>１０−２０％</PERCENT>
+
+
+３．３．１　金額表現
+
+<MONEY>５００億円</MONEY>
+<MONEY>＄１０４，５００</MONEY>
+<MONEY>１２３カナダドル</MONEY>
+
+
+３．３．１．Ａ　単位のない表現
+
+単独で表われる単位のない金額表現もそれが金額である事が明らかならば金額表現と
+する。ただし、範囲表現などで、他に単位がある場合には３．３．Ｄにより単位のない
+部分だけを金額表現とするという事はしない。
+
+その土地は時価<MONEY>五千万</MONEY>である。
+<MONEY>五千−六千万円</MONEY>
+<MONEY>五千から六千万円</MONEY>
+
+
+３．３．２　割合表現
+
+<PERCENT>２０％</PERCENT>
+<PERCENT>１２０パーセント</PERCENT>
+<PERCENT>−１．２％</PERCENT>
+<PERCENT>５割</PERCENT>
+<PERCENT>５分の１</PERCENT>
+<PERCENT>２倍</PERCENT>
+<PERCENT>半分</PERCENT>
+<PERCENT>半</PERCENT>値
+<PERCENT>半</PERCENT>額
+<PERCENT>半</PERCENT>減
+<PERCENT>倍</PERCENT>増
+<PERCENT>倍</PERCENT>速
+
+
+３．３．２．Ａ　間接的表現
+
+表現として直接的でなく曖昧な割合表現は含めない。
+
+１２ポイント
+
+
+３．３．２．Ｂ　比率
+
+比率を用いた割合表現はOPTIONALとする。ただしスポーツの結果などにお
+ける同様の表現は割合表現とはしない。
+
+<OPTIONAL>１対２の比
+<OPTIONAL>１：２</OPTIONAL>の比
+<ORGANIZATION>巨人</ORGANIZATION>は１５対０で大勝
+
+
+３．３．２．Ｃ　半
+
+「半」については、以下のようなものは明確な割合表現ではないとする。
+
+大半
+半ば
+前半
+後半
+半透明
+半月
+下半身
+半壊
+半焼
+半強制的
+
+ただし、以下のような場合には割合表現とする。
+
+五時間<PERCENT>半</PERCENT>
+<PERCENT>四半</PERCENT>世紀
+過<PERCENT>半</PERCENT>数
+北<PERCENT>半</PERCENT>球
+
+
+３．３．２．Ｄ　慣用的な表現
+
+以下のような慣用的な表現では割合表現とはしない
+
+プライドは人一倍。
+
+
