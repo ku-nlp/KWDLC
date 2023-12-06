@@ -56,7 +56,7 @@ EOS
 合体 がったい 合体 名詞 6 サ変名詞 2 * 0 * 0
 も も も 助詞 9 副助詞 2 * 0 * 0
 * -1D
-+ -1D <rel type="ガ" target="合体" sid="w201106-0001713521-3" id="3"/><rel type="ガ" mode="AND" target="合体" sid="w201106-0001713521-3" id="2"/><rel type="ガ２" target="不特定:物1"/>
++ -1D <rel type="ガ" target="合体" sid="w201106-0001713521-3" id="3"/><rel type="ガ" mode="AND" target="合体" sid="w201106-0001713521-3" id="3"/><rel type="ガ２" target="不特定:物1"/>
 可能 かのう 可能だ 形容詞 3 * 0 ナ形容詞 21 語幹 1
 。 。 。 特殊 1 句点 1 * 0 * 0
 EOS
