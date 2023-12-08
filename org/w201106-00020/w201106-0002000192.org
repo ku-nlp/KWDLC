@@ -1,6 +1,6 @@
-# S-ID:w201106-0002000192-1 MEMO:
+# S-ID:w201106-0002000192-1 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-154.01389 MOD:2016/07/27 MEMO:
 昨日、１４日閑谷学校で行われるイベント用に「いち」がランチコーディネートする鹿肉タコライスの試食をしてきました。
-# S-ID:w201106-0002000192-2 MEMO:http://lotus.kuee.kyoto-u.ac.jp/annotation/corpus-simple/css/images/next_on.png
+# S-ID:w201106-0002000192-2 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-27.53093 MOD:2015/09/10 MEMO:http://lotus.kuee.kyoto-u.ac.jp/annotation/corpus-simple/css/images/next_on.png
 作ってくれたのはフリーダムタコスさん。
-# S-ID:w201106-0002000192-3 MEMO:
+# S-ID:w201106-0002000192-3 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-69.76067 MOD:2015/09/10 MEMO:
 残念ながらこちらイベント限定メニューで、お店では食べられません。
