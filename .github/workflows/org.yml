@@ -1,0 +1,30 @@
+name: Generate org files
+
+on:
+  push:
+    paths:
+      - "knp/**"
+
+jobs:
+  generate-org:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Install Poetry
+        run: pipx install poetry
+      - name: Install dependencies
+        run: poetry install --no-interaction
+      - name: Generate org files
+        run: poetry run python scripts/knp_to_org.py
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: update org files
+          # Optional glob pattern of files which should be added to the commit
+          file_pattern: org/**/*.org
+          # Optional. Prevents the shell from expanding filenames.
+          # Details: https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html
+          disable_globbing: false
