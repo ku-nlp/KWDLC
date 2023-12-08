@@ -1,6 +1,6 @@
 # Kyoto University Web Document Leads Corpus
 
-### Overview
+## Overview
 
 This is a Japanese text corpus that consists of lead three sentences
 of web documents with various linguistic annotations. By collecting
@@ -17,7 +17,7 @@ analyses of the morphological analyzer JUMAN and the dependency, case
 structure and anaphora analyzer KNP. The discourse annotations were
 given by two types of annotators; experts and crowd workers.
 
-### Notes
+## Notes
 
 This corpus consists of linguistically annotated Web documents that
 have been made publicly available on the Web at some time. The corpus
@@ -32,7 +32,7 @@ the addition of source information or deletion of these documents, we will
 update the corpus and newly release it. In this case, please delete
 the downloaded old version and replace it with the new version.
 
-### Notes on annotation guidelines
+## Notes on annotation guidelines
 
 The annotation guidelines for this corpus are written in the manuals
 found in the "doc" directory. The guidelines for morphology and
@@ -42,17 +42,25 @@ rel_guideline.pdf, and those for discourse relations are described in
 disc_guideline.pdf. The guidelines for named entities are available on
 the IREX website (<http://nlp.cs.nyu.edu/irex/>).
 
-### Distributed files
+## Distributed files
 
-* `knp/`: the corpus annotated with morphology, named entities, dependencies, predicate-argument structures, and coreferences
+* `knp/`: the corpus annotated with morphology, named entities, dependencies, predicate-argument structures, and
+coreferences
 * `disc/`: the corpus annotated with discourse relations
 * `org/`: the raw corpus
 * `doc/`: annotation guidelines
 * `id/`: document id files providing train/test split
 
-Note that the encoding of the corpus data is UTF-8.
+## Statistics
 
-### Format of the corpus annotated with annotations of morphology, named entities, dependencies, predicate-argument structures, and coreferences
+|       | # of documents | # of sentences | # of morphemes | # of named entities | # of predicates | # of coreferring mentions |
+|-------|---------------:|---------------:|---------------:|--------------------:|----------------:|--------------------------:|
+| train |          3,915 |         11,745 |        194,490 |               6,267 |          51,702 |                    16,079 |
+| dev   |            512 |          1,536 |         22,625 |                 974 |           6,139 |                     1,641 |
+| test  |            700 |          2,100 |         35,869 |               1,122 |           9,549 |                     3,074 |
+| total |          5,127 |         15,381 |        252,984 |               8,363 |          67,390 |                    20,794 |
+
+## Format of the corpus annotated with annotations of morphology, named entities, dependencies, predicate-argument structures, and coreferences
 
 Annotations of this corpus are given in the following format.
 
@@ -117,7 +125,7 @@ respectively. If a basic phrase has multiple tags of the same type, a
 "？." The details of these attributes are described in the annotation
 guidelines (rel_guideline.pdf).
 
-### Format of the corpus annotated with discourse relations
+## Format of the corpus annotated with discourse relations
 
 In this corpus, a clause pair is given a discourse type and its votes as follows.
 
@@ -142,17 +150,28 @@ by experts, the discourse direction is annotated; if it is reverse order,
 methods and discourse relations are described in [Kawahara et al., 2014]
 and the annotation guidelines (disc_guideline.pdf).
 
-### References
+## References
 
-* Masatsugu Hangyo, Daisuke Kawahara and Sadao Kurohashi. Building a Diverse Document Leads Corpus Annotated with Semantic Relations, In Proceedings of the 26th Pacific Asia Conference on Language Information and Computing, pp.535-544, 2012. <http://www.aclweb.org/anthology/Y/Y12/Y12-1058.pdf>
-* 萩行正嗣, 河原大輔, 黒橋禎夫. 多様な文書の書き始めに対する意味関係タグ付きコーパスの構築とその分析, 自然言語処理, Vol.21, No.2, pp.213-248, 2014. <https://doi.org/10.5715/jnlp.21.213>
-* Daisuke Kawahara, Yuichiro Machida, Tomohide Shibata, Sadao Kurohashi, Hayato Kobayashi and Manabu Sassano. Rapid Development of a Corpus with Discourse Annotations using Two-stage Crowdsourcing, In Proceedings of the 25th International Conference on Computational Linguistics, pp.269-278, 2014. <http://www.aclweb.org/anthology/C/C14/C14-1027.pdf>
-* 岸本裕大, 村脇有吾, 河原大輔, 黒橋禎夫. 日本語談話関係解析：タスク設計・談話標識の自動認識・ コーパスアノテーション, 自然言語処理, Vol.27, No.4, pp.889-931, 2020. <https://doi.org/10.5715/jnlp.27.889>
+* Masatsugu Hangyo, Daisuke Kawahara and Sadao Kurohashi. Building a Diverse Document Leads Corpus Annotated with
+  Semantic Relations, In Proceedings of the 26th Pacific Asia Conference on Language Information and Computing,
+  pp.535-544, 2012. <http://www.aclweb.org/anthology/Y/Y12/Y12-1058.pdf>
+* 萩行正嗣, 河原大輔, 黒橋禎夫. 多様な文書の書き始めに対する意味関係タグ付きコーパスの構築とその分析, 自然言語処理,
+  Vol.21, No.2, pp.213-248, 2014. <https://doi.org/10.5715/jnlp.21.213>
+* Daisuke Kawahara, Yuichiro Machida, Tomohide Shibata, Sadao Kurohashi, Hayato Kobayashi and Manabu Sassano. Rapid
+  Development of a Corpus with Discourse Annotations using Two-stage Crowdsourcing, In Proceedings of the 25th
+  International Conference on Computational Linguistics, pp.269-278,
+  2014. <http://www.aclweb.org/anthology/C/C14/C14-1027.pdf>
+* 岸本裕大, 村脇有吾, 河原大輔, 黒橋禎夫. 日本語談話関係解析：タスク設計・談話標識の自動認識・ コーパスアノテーション,
+  自然言語処理, Vol.27, No.4, pp.889-931, 2020. <https://doi.org/10.5715/jnlp.27.889>
 
-### Acknowledgment
+## Acknowledgment
 
-The creation of this corpus was supported by JSPS KAKENHI Grant Number 24300053 and JST CREST "Advanced Core Technologies for Big Data Integration." The discourse annotations were acquired by crowdsourcing under the support of Yahoo! Japan Corporation. We deeply appreciate their support.
+The creation of this corpus was supported by JSPS KAKENHI Grant Number 24300053 and JST CREST "Advanced Core
+Technologies for Big Data Integration." The discourse annotations were acquired by crowdsourcing under the support of
+Yahoo! Japan Corporation. We deeply appreciate their support.
 
-### Contact
+## Contact
 
-If you have any questions or problems with this corpus, please send an email to nl-resource at nlp.ist.i.kyoto-u.ac.jp. If you have a request to add source information or to delete a document in the corpus, please send an email to this mail address.
+If you have any questions or problems with this corpus, please send an email to nl-resource at nlp.ist.i.kyoto-u.ac.jp.
+If you have a request to add source information or to delete a document in the corpus, please send an email to this mail
+address.
