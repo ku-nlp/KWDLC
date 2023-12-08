@@ -1,6 +1,6 @@
-# S-ID:w201106-0002000111-1 MEMO:http://lotus.kuee.kyoto-u.ac.jp/annotation/corpus-simple/css/images/next_on.png
+# S-ID:w201106-0002000111-1 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-57.29909 MOD:2015/08/30 MEMO:http://lotus.kuee.kyoto-u.ac.jp/annotation/corpus-simple/css/images/next_on.png
 スタイリングが苦手な方は是非来ていただきたいです。
-# S-ID:w201106-0002000111-2 MEMO:
+# S-ID:w201106-0002000111-2 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-64.36790 MOD:2015/08/30 MEMO:
 毎日のスタイリングが簡単に出来る手助けをさせていただきます。
-# S-ID:w201106-0002000111-3 MEMO:
+# S-ID:w201106-0002000111-3 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-84.29523 MOD:2015/08/30 MEMO:
 また、ドライカットでお客様に似合うスタイルを創るのが得意です。
