@@ -3,15 +3,15 @@
 * `disc_crowdsourcing.txt` annotation file annotated by crowd workers.
 * `disc_expert.txt` annotation file annotated by experts.
 * `make_knp_file_with_discourse_annotation.py` python script to convert annotation files to KNP-format files.
-* `requirements.txt` 
+* `requirements.txt`
 
 ### Requirement ###
 
 ```
-$ pip install -r requirements.txt 
+$ pip install -r requirements.txt
 ```
 
-### How to make KNP-format files ### 
+### How to make KNP-format files ###
 
 Run the following command.
 
@@ -38,4 +38,3 @@ optional arguments:
   --remove_duplicate_from_crowd
                         Remove duplicate documents from annotation file annotated by crowd workers.
 ```
-
