@@ -1,12 +1,11 @@
 import os
 import re
-from pyknp import KNP
-from collections import defaultdict
 from argparse import ArgumentParser
+from collections import defaultdict
+from logging import FileHandler, Formatter, getLogger
 
 from progressbar import progressbar
-
-from logging import getLogger, FileHandler, Formatter
+from pyknp import KNP
 
 logger = getLogger(__name__)
 handler = FileHandler("disc.log")
@@ -30,10 +29,10 @@ def organize_knp_features(knp_result):
     sid = knp_result.sid
     clause_tids = []
     # remove bnst's features
-    for i, bnst in enumerate(knp_result.bnst_list()):
+    for i in range(len(knp_result.bnst_list())):
         knp_result.bnst_list()[i].fstring = ""
     # remove mrph's features
-    for i, mrph in enumerate(knp_result.mrph_list()):
+    for i in range(len(knp_result.mrph_list())):
         knp_result.mrph_list()[i].fstring = ""
     # Organize tag's features
     for i, tag in enumerate(knp_result.tag_list()):
@@ -61,7 +60,7 @@ def add_discourse_info_to_gold_knp(ann_data):
             knp_results = []
             clause_tids = []
             # Load knp file
-            with open(knp_path, "r") as f:
+            with open(knp_path) as f:
                 data = ""
                 for line in f:
                     data += line
@@ -137,14 +136,14 @@ def make_knp_from_textfile(disc_ann):
         org_path = os.path.join(GOLD_ORG_DIR, doc["A-ID"][:13], f'{doc["A-ID"]}.org')
         if os.path.exists(org_path):
             # Found -> read org file
-            with open(org_path, "r") as f:
+            with open(org_path) as f:
                 sents = []
                 insert_point = -1
                 for line in f.readlines():
                     if re.match("#", line.strip()):
                         if paren_cidx := re.search(r"括弧位置:(\d+)", line.strip()):
                             insert_point = paren_cidx.group(1)
-                    else:
+                    else:  # noqa: PLR5501
                         if insert_point != -1:
                             # insert paren
                             sents[-1] = (
@@ -238,7 +237,7 @@ def remove_duplicate_data(
 
 def read_disc_ann_file(filepath):
     result = []
-    with open(filepath, "r") as f:
+    with open(filepath) as f:
         doc = {"A-ID": "", "clause": [], "rel": defaultdict(lambda: defaultdict(list))}
         for line in f.readlines():
             if line.strip() == "":
