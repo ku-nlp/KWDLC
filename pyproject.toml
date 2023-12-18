@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "KWDLC"
-version = "1.1.0"
+version = "1.1.1"
 description = ""
 authors = ["nobu-g <ueda-n127@hotmail.co.jp>"]
 readme = "README.md"
