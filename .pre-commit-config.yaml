@@ -11,7 +11,6 @@ repos:
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
-        language: system
   - repo: https://github.com/psf/black-pre-commit-mirror
     rev: 23.11.0
     hooks:
