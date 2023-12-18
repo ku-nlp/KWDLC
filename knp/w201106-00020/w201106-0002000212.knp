@@ -18,7 +18,7 @@
 であった であった だ 判定詞 4 * 0 判定詞 25 デアル列タ形 21 NIL
 。 。 。 特殊 1 句点 1 * 0 * 0 NIL
 EOS
-# S-ID:w201106-0002000212-2 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-163.15576 MOD:2015/09/30 MEMO:
+# S-ID:w201106-0002000212-2 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-163.15576 MOD:2023/12/18 MEMO:
 * 1D
 + 1D <rel type="ガ" target="不特定:人１"/><rel type="ト" target="不特定:人２"/>
 戦闘 せんとう 戦闘 名詞 6 サ変名詞 2 * 0 * 0 NIL
@@ -37,7 +37,7 @@ EOS
 * 5D
 + 5D <rel type="ガ" target="規模" sid="w201106-0002000212-2" id="5"/>
 小 しょう 小 接頭辞 13 名詞接頭辞 1 * 0 * 0 NIL
-+ 6D <rel type="ガ" target="もの" sid="" id="0"/>
++ 6D <rel type="ガ" target="もの" sid="w201106-0002000212-2" id="6"/>
 規模 きぼ 規模 名詞 6 普通名詞 1 * 0 * 0 NIL
 な な だ 判定詞 4 * 0 判定詞 25 ダ列基本連体形 3 NIL
 * 9P

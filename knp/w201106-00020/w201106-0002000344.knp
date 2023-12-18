@@ -12,7 +12,7 @@
 ばっかり ばっかり ばっかり 助詞 9 副助詞 2 * 0 * 0 NIL
 。 。 。 特殊 1 句点 1 * 0 * 0 NIL
 EOS
-# S-ID:w201106-0002000344-2 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-47.74792 MOD:2015/10/10 MEMO:
+# S-ID:w201106-0002000344-2 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-47.74792 MOD:2023/12/18 MEMO:
 * 2D
 + 1D <rel type="ガ" target="の" sid="w201106-0002000344-2" id="1"/>
 正しい ただしい 正しい 形容詞 3 * 0 イ形容詞イ段 19 基本形 2 NIL
@@ -24,12 +24,12 @@ EOS
 ネット ねっと ネット 名詞 6 普通名詞 1 * 0 * 0 NIL
 と と と 助詞 9 格助詞 1 * 0 * 0 NIL
 * -1D
-+ -1D <rel type="ガ" target="の" sid="w201106-0002000344-2" id="1"/><rel type="=構≒" target="の" sid="w201106-0002000344-2" id="1"/>
++ -1D <rel type="ガ" target="の" sid="w201106-0002000344-2" id="1"/><rel type="=構≒" target="の" sid="w201106-0002000344-2" id="1"/><memo text="CO"/>
 自分 じぶん 自分 名詞 6 普通名詞 1 * 0 * 0 NIL
 だけ だけ だけ 助詞 9 副助詞 2 * 0 * 0 NIL
 。 。 。 特殊 1 句点 1 * 0 * 0 NIL
 EOS
-# S-ID:w201106-0002000344-3 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-26.90997 MOD:2015/10/10 MEMO:
+# S-ID:w201106-0002000344-3 JUMAN:8.0 (Revision.8ce44af on 2014-08-14) KNP:4.2-a4cc810 DATE:2014/08/18 SCORE:-26.90997 MOD:2023/12/18 MEMO:
 * 3D
 + 3D
 ふむ ふむ ふむ 感動詞 12 * 0 * 0 * 0 NIL
@@ -39,7 +39,7 @@ EOS
 カルト かると カルト 名詞 6 普通名詞 1 * 0 * 0 NIL
 と と と 助詞 9 格助詞 1 * 0 * 0 NIL
 * 3D
-+ 3D <rel type="ガ" target="頭" sid="" id="0"/><rel type="ト" target="カルト" sid="w201106-0002000344-3" id="1"/>
++ 3D <rel type="ト" target="カルト" sid="w201106-0002000344-3" id="1"/><rel type="ガ" target="頭" sid="w201106-0002000344-3" id="3"/>
 同じ おなじ 同じだ 形容詞 3 * 0 ナ形容詞特殊 23 ダ列特殊連体形 4 NIL
 * -1D
 + -1D <rel type="ガ" target="著者"/><rel type="ガ" mode="？" target="不特定:人"/><rel type="修飾" target="同じ" sid="w201106-0002000344-3" id="2"/>

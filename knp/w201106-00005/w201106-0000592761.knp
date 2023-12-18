@@ -34,7 +34,7 @@ EOS
 * 2D
 + 2D
 聖徳 しょうとく 聖徳 名詞 6 人名 5 * 0 * 0 NIL
-+ 3D <rel type="=" target="太子" sid="w201106-0000592761-1-01" id="3"/><NE:OPTIONAL:聖徳太子><NE-OPTIONAL:PERSON:4>
++ 3D <rel type="=" target="太子" sid="w201106-0000592761-1-01" id="2"/><NE:OPTIONAL:聖徳太子><NE-OPTIONAL:PERSON:4>
 太子 たいし 太子 名詞 6 普通名詞 1 * 0 * 0 NIL
 の の の 助詞 9 接続助詞 3 * 0 * 0 NIL
 * -1D
